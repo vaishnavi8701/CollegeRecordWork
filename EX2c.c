@@ -1,5 +1,5 @@
 # include <stdio.h>
-int main()
+void main()
 {
     int Num1, Num2;
     printf("\nEnter Two Numbers...");
@@ -16,5 +16,4 @@ int main()
     printf("\nDivision Result:-");
     printf("\nQuotient...%d", Quotient);
     printf("\nRemainder...%d\n", Rem);
-    return 0;
 }
