@@ -1,10 +1,10 @@
 # include <stdio.h>
 int main()
 {
- char Ch;
+ char Color;
  printf("\nEnter A Character...");
- scanf("%c", &Ch);
- switch(Ch)
+ scanf("%c", &Color);
+ switch(Color)
   {
     case 'R':
     case 'r':printf("RED\n");
