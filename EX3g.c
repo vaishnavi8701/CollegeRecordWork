@@ -11,5 +11,5 @@ void main()
       }
     }
  printf("\nThe Count Of Even Numbers From 1 To 200 Is...%d", Count);
- printf("\nThe Sum Of The Serie Is...%d", Sum);
+ printf("\nThe Sum Of The Series Is...%d\n", Sum);
 }
