@@ -15,21 +15,21 @@ int main()
       }
     }
   if(Prime_Flag==1 && Num!=1)
-   printf("\nThe Entered Number Is A Prime Number.");
+   printf("\nThe Entered Number Is A Prime Number.\n");
  Temp_Num=Num;
- /*x=Num;
+ x=Num;
   while(x!=0)
    {
      Digits++;
      x/=10;
-   }*/
-  /*while(Temp_Num!=0)
+   }
+  while(Temp_Num!=0)
    {
      int Rem=Temp_Num%10;
-     Arm_Sum+=Rem;
+     Arm_Sum+=pow(Rem,Digits);
      Temp_Num/=10;
-   }*/
+   }
  if(Arm_Sum==Num)
-   printf("\nThe Entered Number Is An Armstrong Number.");
+   printf("\nThe Entered Number Is An Armstrong Number.\n");
  return 0;
 }
