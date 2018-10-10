@@ -6,13 +6,13 @@ int main()
  scanf("%d", &Days);
  printf("Enter The Starting Day Of The Month (Sun=1 Sat=7)....");
  scanf("%d", &Start_Day);
- printf("\n  Sun  Mon  Tue  Wed  Thu  Fri  Sat\n");
+ printf("\n  S  M  T  W  T  F  S\n");
  int k;
  for(k=0;k<Start_Day-1;k++)
- printf("     ");
+ printf("   ");
   for(int i=1;i<=Days;i++)
    {
-    printf("%5d", i);
+    printf("%3d", i);
      if(++k>6)
       {
        k=0;
