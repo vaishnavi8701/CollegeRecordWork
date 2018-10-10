@@ -2,11 +2,11 @@
 # include <math.h>
 int main()
 {
- int Num, Temp_Num, x, Arm_Sum=0, Digits=0;
+ int i, Num, Temp_Num, x, Arm_Sum=0, Digits=0;
  printf("\nEnter A Number...");
  scanf("%d", &Num);
  int Prime_Flag=1;
-  for(int i=2;i<=Num/2;i++)
+  for(i=2;i<=Num/2;i++)
     {
       if(Num%i==0)
       {
