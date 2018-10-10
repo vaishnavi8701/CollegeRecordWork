@@ -1,8 +1,8 @@
 # include <stdio.h>
 void main()
 {
-  int Sum=0, Count=0;
-   for(int i=1;i<=200;i++)
+  int i, Sum=0, Count=0;
+   for(i=1;i<=200;i++)
     {
      if(i%2==0)
       {
