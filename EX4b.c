@@ -1,12 +1,12 @@
 # include <stdio.h>
 void main()
 {
-  int Size, Sum=0;
+  int i, Size, Sum=0;
   printf("\nEnter The Size Of The Array...");
   scanf("%d", &Size);
   int Arr[Size];
   printf("\n");
-   for(int i=0;i<Size;i++)
+   for(i=0;i<Size;i++)
     {
      printf("Enter Element %d:", i+1);
      scanf("%d", &Arr[i]);
