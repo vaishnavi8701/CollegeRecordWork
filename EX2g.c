@@ -1,9 +1,9 @@
 # include <stdio.h>
-int main()
+void main()
 {
-    char Ch;
-    printf("\nEnter A Character....");
-    scanf("%c", &Ch);
-    printf("The ASCII Code Of The Entered Character Is...%d\n",Ch);
-    return 0;
+    int i, j;
+    printf("\nEnter Two Integers i and j...");
+    scanf("%d %d", &i, &j);
+    int Round_Off=i+j-i%j;
+    printf("The Rounded Off Integer Is...%d\n", Round_Off);
 }

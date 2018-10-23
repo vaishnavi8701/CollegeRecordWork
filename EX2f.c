@@ -1,9 +1,9 @@
 # include <stdio.h>
 void main()
 {
-    int i, j;
-    printf("\nEnter Two Integers i and j...");
-    scanf("%d %d", &i, &j);
-    int Round_Off=i+j-i%j;
-    printf("The Rounded Off Integer Is...%d\n", Round_Off);
+  int a, b, c;
+  printf("\nEnter Three Integers...");
+  scanf("%d %d %d", &a, &b, &c);
+  int Greatest=(a>b) ? (a>c?a:c) : (b>c?b:c);
+  printf("The Greatest Among The Three Integers Is...%d\n", Greatest);
 }
