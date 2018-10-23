@@ -8,7 +8,7 @@ void main()
   printf("\n");
    for(int i=0;i<Size;i++)
     {
-     printf("Enter The Value Of Element %d:", i+1);
+     printf("Enter Element %d:", i+1);
      scanf("%d", &Arr[i]);
      Sum+=Arr[i];
     }
