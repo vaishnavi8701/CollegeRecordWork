@@ -37,4 +37,4 @@ void main()
   for(i=1, j=11, k=20; i<10; i++, k+=10, j+=10)
    printf("\nNumber Of Students In %d-%d Range...%d", j, k, Group[i]);
  printf("\n");
-}                                                                                                                                           40,1          All
+}
