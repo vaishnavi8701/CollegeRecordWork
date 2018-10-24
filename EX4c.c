@@ -9,12 +9,11 @@ void main()
    for(i=0;i<Size;i++)
       for(j=0;j<Size;j++)
         scanf("%d", &Arr[i][j]);
-
    for(i=0;i<Size;i++)
       for(j=0;j<Size;j++)
           if(i==j)
            Arr[i][j]=0;
-  printf("\n");
+  printf("The Matrix With All Elements Changed To 0 Is:-\n");
    for(i=0;i<Size;i++)
     {
       for(j=0;j<Size;j++)
@@ -22,3 +21,4 @@ void main()
      printf("\n");
     }
 }
+
