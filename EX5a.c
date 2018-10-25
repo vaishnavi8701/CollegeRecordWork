@@ -28,7 +28,7 @@ void main()
         case 3:if(Flag==1)
                 printf("\nThe String Is...%s\n", s);
                else
-                 printf("\nPlease Enter The String First\n");
+                 printf("\nPlease Enter The String First.\n");
                break;
         case 4:exit(0);
                 break;
