@@ -25,7 +25,7 @@ int main()
                     break;
                   }
                 }
-	             if(Prime_Flag==1 && Num!=1)
+	       if(Prime_Flag==1 && Num!=1)
                 printf("The Entered Number Is A Prime Number.\n");
                else
                 printf("The Entered Number Is Not A Prime Number.\n");
