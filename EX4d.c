@@ -10,7 +10,7 @@ void main()
        printf("Enter The Marks Of Student %d...", i+1);
        scanf("%d", &Arr[i]);
         if(Arr[i]<0 || Arr[i]>100)
-         printf("Marks Should Be In The Range Of 0-100 Only.");
+         printf("Marks Should Be In The Range Of 0-100 Only.\n");
       }while(Arr[i]<0 || Arr[i]>100);
      if(Arr[i]>=0 && Arr[i]<=10)
       Group[0]++;
@@ -33,8 +33,24 @@ void main()
      else if(Arr[i]>=91 && Arr[i]<=100)
       Group[9]++;
    }
- printf("\nNumber Of Students In 0-10 Range Are...%d", Group[0]);
-  for(i=1, j=11, k=20; i<10; i++, k+=10, j+=10)
-   printf("\nNumber Of Students In %d-%d Range...%d", j, k, Group[i]);
+  for(i=0, j=0, k=10; i<10; i++, j+=10, k+=10)
+   {
+     printf("\nNumber Of Students In %d-%d Range...%d", j, k, Group[i]);
+      if(i==0)
+       j++;
+   }
+ printf("\n");
+  for(i=0, j=0, k=10; i<10; i++, j+=10, k+=10)
+   {
+    printf("\n%d-%d...", j, k);
+     if(i==0)
+     {
+      printf(".");
+      j++;
+     }
+    printf(" "); 
+     for(int Cnt=0;Cnt<Group[i];Cnt++)
+      printf("*");
+    }
  printf("\n");
 }
