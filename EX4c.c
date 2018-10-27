@@ -5,7 +5,7 @@ void main()
   printf("\nEnter The Number Of Rows And Columns In The Square Matrix...");
   scanf("%d", &Size);
   int Arr[Size][Size];
-  printf("\n");
+  printf("\nEnter The Elements Of The Matrix:-\n");
    for(i=0;i<Size;i++)
       for(j=0;j<Size;j++)
         scanf("%d", &Arr[i][j]);
@@ -21,4 +21,3 @@ void main()
      printf("\n");
     }
 }
-
