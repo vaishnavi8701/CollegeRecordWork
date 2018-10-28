@@ -48,7 +48,7 @@ void main()
       printf(".");
       j++;
      }
-    printf(" "); 
+    printf(" ");
      for(int Cnt=0;Cnt<Group[i];Cnt++)
       printf("*");
     }
