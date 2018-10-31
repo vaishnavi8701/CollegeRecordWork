@@ -1,7 +1,7 @@
 # include <stdio.h>
 void main()
 {
-  int i, j, k, Arr[10], Group[10]={0};
+  int i, j, k, Arr[10], Group[10]={0}, Cnt;
   printf("\n");
    for(i=0;i<10;i++)
     {
@@ -49,7 +49,7 @@ void main()
       j++;
      }
     printf(" ");
-     for(int Cnt=0;Cnt<Group[i];Cnt++)
+     for(Cnt=0;Cnt<Group[i];Cnt++)
       printf("*");
     }
  printf("\n");
