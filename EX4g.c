@@ -12,7 +12,7 @@ void main()
    {
     for(j=0;j<n;j++)
      {
-      scanf("%d", &Arr1[i][j]);
+      scanf("%f", &Arr1[i][j]);
      }
    }
  printf("\nEnter The Elements Of Matrix 2:-\n");
@@ -20,7 +20,7 @@ void main()
    {
     for(j=0;j<k;j++)
      {
-      scanf("%d", &Arr2[i][j]);
+      scanf("%f", &Arr2[i][j]);
      }
    }
  printf("\nResult Of Matrix Multiplication:-\n");
@@ -29,13 +29,18 @@ void main()
     for(j=0;j<k;j++)
      {
       Product[i][j]=0;
-      for(Count=0;Count<n;Count++)
-       {
-        Product[i][j]+=Arr1[i][Count]*Arr2[Count][j];
-      }
+       for(Count=0;Count<n;Count++)
+        {
+         Product[i][j]+=Arr1[i][Count]*Arr2[Count][j];
+        }
      }
    }
   for(i=0;i<m;i++)
+   {
     for(j=0;j<k;j++)
-     printf("%d ", Product[i][j]);
+     {
+      printf("%.2f ", Product[i][j]);
+     }
+    printf("\n");
+   }
 }
