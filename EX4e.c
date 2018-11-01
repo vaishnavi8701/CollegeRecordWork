@@ -10,7 +10,7 @@ void main()
   for(i=0;i<n;i++)
    {
      printf("\nEnter The Marks Of Student %d...", i+1);
-     for(int j=0;j<6;j++)
+     for(j=0;j<6;j++)
        {
         scanf("%d", &Arr[i][j]);
         Sum[i]+=Arr[i][j];
