@@ -2,7 +2,7 @@
 # include <string.h>
 void main()
 {
-  char *Str;
+  char Str[100];
   int i, Vowel=0;
   printf("\nEnter A String...");
   scanf("%s", Str);
@@ -14,5 +14,5 @@ void main()
           Str[i]=='u' || Str[i]=='U')
          Vowel++;
    }
-   printf("\nThe Number Of Vowels Present In The String Is...%d", Vowel);
+   printf("The Number Of Vowels Present In The String Is...%d\n", Vowel);
 }
