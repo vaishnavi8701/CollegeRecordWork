@@ -7,16 +7,17 @@ void main()
  int Arr[n][6], Sum[n];
   for(i=0;i<n;i++)
    Sum[i]=0;
+ printf("\n");
   for(i=0;i<n;i++)
    {
-     printf("\nEnter The Marks Of Student %d...", i+1);
+     printf("Enter The Marks Of Student %d...", i+1);
      for(j=0;j<6;j++)
        {
         scanf("%d", &Arr[i][j]);
         Sum[i]+=Arr[i][j];
        }
    }
- printf("Student Number   Exam 1   Exam 2   Exam 3   Exam 4   Exam 5   Exam 6   Average\n");
+ printf("\nStudent Number   Exam 1   Exam 2   Exam 3   Exam 4   Exam 5   Exam 6   Average\n");
   for(i=0;i<n;i++)
    {
      printf("%8d    ", i+1);
