@@ -11,7 +11,7 @@ void main()
      for(j=0;j<n;j++)
       scanf("%d", &Table[i][j]);
    }
- printf("Enter The Elements Of List (Size n)...");
+ printf("Enter The Elements Of List (Size %d)...", n);
   for(i=0;i<n;i++)
    {
     scanf("%d", &List[i]);
