@@ -2,21 +2,21 @@
 # include <string.h>
 void main()
 {
- char str[100];
+ char Str[100];
  printf("\nEnter A String...");
- scanf("%s", &str);
+ scanf("%s", &Str);
  int i, j, Count=0;
  printf("\n");
-  for(i=0;str[i]!='\0';i++)
+  for(i=0;Str[i]!='\0';i++)
    {
     for(j=0;j<=i;j++)
-     printf("%c ", str[j]);
+     printf("%c ", Str[j]);
     printf("\n");
    }
   for(;i>=0;i--)
    {
      for(j=0;j<i;j++)
-      printf("%c ", str[j]);
+      printf("%c ", Str[j]);
     printf("\n");
    }
 }
