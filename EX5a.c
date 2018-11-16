@@ -19,7 +19,7 @@ void main()
                 scanf("%s", &s);
                 int Flag=1;
                  break;
-        case 2:if(Flag==1)
+         case 2:if(Flag==1)
                 {
                  int Count=0, i;
                   for(i=0;s[i]!='\0';i++)
@@ -29,14 +29,14 @@ void main()
                else
                 printf("\nPlease Enter The String First.\n");
                break;
-        case 3:if(Flag==1)
+         case 3:if(Flag==1)
                 printf("\nThe String Is...%s\n", s);
                else
                  printf("\nPlease Enter The String First.\n");
                break;
-        case 4:printf("\nThank You For Using The Program.\n");
+         case 4:printf("\nThank You For Using The Program.\n");
                 break;
-        default:printf("\nInvalid Choice.\n");
+         default:printf("\nInvalid Choice.\n");
        }
    }
 }
