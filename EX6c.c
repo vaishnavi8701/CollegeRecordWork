@@ -1,4 +1,4 @@
-/*# include <stdio.h>
+# include <stdio.h>
 void Swap(int x, int y);
 void main()
 {
@@ -17,7 +17,7 @@ void Swap(int x, int y)
   y=Temp;
   printf("\nAfter Swapping In The Swap Function: a=%d, b=%d", x, y);
 }
-*/
+
 # include <stdio.h>
 void Swap(int *x, int *y);
 void main()
