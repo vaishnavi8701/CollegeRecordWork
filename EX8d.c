@@ -3,12 +3,12 @@
  {
   int realPart, imaginaryPart;
  };
+ void Menu();
 struct Complex readComplex();
 void displayComplex(struct Complex c);
 struct Complex addComplex(struct Complex c1, strcut Complex c2);
 struct Complex diffComplex(struct Complex c1, struct Complex c2);
 struct Complex multiplyComplex(struct Complex c1, struct Complex c2);
-void Menu();
 void main()
 {
  Menu();
@@ -16,6 +16,7 @@ void main()
 void Menu()
 {
   int Choice;
+  struct Complex x, y, Res;
    while(Choice!=6)
     {
       printf("\nEnter Any One Of The Following Choices");
@@ -28,7 +29,26 @@ void Menu()
       scanf("%d", &Choice);
        switch(Choice)
         {
-          
+          case 1:x=readComplex();
+                    break;
+          case 2:dipslayComplex(Res);
+                  break;
+          case 3:x=readComplex();
+                 y=readComplex();
+                 Res=addComplex(x,y);
+                  break;
+          case 4:x=readComplex();
+                 y=readComplex();
+                 Res=diffComplex(x,y);
+                  break;
+          case 5:x=readComplex();
+                 y=readComplex();
+                 Res=multiplyComplex(x,y);
+                  break;
+          case 6:printf("\nThank You For Using The Program.");
+                  break;
+          default:printf("\nInvalid Choice.\n");
+
         }
     }
 }
