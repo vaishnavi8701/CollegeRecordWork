@@ -48,7 +48,38 @@ void Menu()
           case 6:printf("\nThank You For Using The Program.");
                   break;
           default:printf("\nInvalid Choice.\n");
-
         }
     }
+}
+struct Complex readComplex()
+{
+  struct Complex c;
+  printf("\nEnter The Real And Imaginary Part...");
+  scanf("%d %d", &c.realPart, &c.imaginaryPart);
+  return c;
+}
+void displayComplex(struct Complex c)
+{
+  printf("%d+i%d", c.realPart, c.imaginaryPart);
+}
+struct Complex addComplex(struct Complex c1, strcut Complex c2)
+{
+  struct Complex c;
+  c.realPart=c1.realPart+c2.realPart;
+  c.imaginaryPart=c1.imaginaryPart+c2.imaginaryPart;
+  return c;
+}
+struct Complex diffComplex(struct Complex c1, struct Complex c2)
+{
+ struct Complex c;
+ c.realPart=c1.realPart+c2.realPart;
+ c.imaginaryPart=c1.imaginaryPart+c2.imaginaryPart;
+ return c;
+}
+struct Complex multiplyComplex(struct Complex c1, struct Complex c2);
+{
+ struct Complex c;
+ c.realPart=(c1.realPart*c2.realPart)-(c1.imaginaryPart*c2.imaginaryPart);
+ c.imaginaryPart=(c1.realPart*c2.imaginaryPart)+(c1.imaginaryPart*c2.realPart);
+ return c;
 }
