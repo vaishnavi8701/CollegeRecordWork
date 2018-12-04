@@ -12,6 +12,5 @@ int computeHCF(int x, int y)
 {
   if(y==0)
    return x;
-  else
-   return computeHCF(y, x%y);
+ return computeHCF(y, x%y);
 }
