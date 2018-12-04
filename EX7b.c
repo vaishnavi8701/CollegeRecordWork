@@ -6,12 +6,11 @@ void main()
  printf("\nEnter The Values Of x and y...");
  scanf("%d %d", &x, &y);
  Res=computeFunction(x, y);
- printf("\nThe Result Of f(%d, %d) Is...%d\n",x, y, Res);
+ printf("The Result Of f(%d, %d) Is...%d\n",x, y, Res);
 }
 int computeFunction(int a, int b)
 {
- if(b<=a)
-  return computeFunction(a-b, b)+1;
- else if(a<b)
-  return 0;
+  if(b<=a)
+   return computeFunction(a-b, b)+1;
+ return 0;
 }
