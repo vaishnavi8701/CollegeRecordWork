@@ -12,6 +12,5 @@ int computeFunction(int n)
 {
   if(n==1)
    return 0;
-  else if(n>1)
-   return computeFunction(n/2)+1;
+ return computeFunction(n/2)+1;
 }
