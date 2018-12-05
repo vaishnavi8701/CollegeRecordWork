@@ -4,7 +4,7 @@ void main()
 {
  char str[100];
  printf("\nEnter A String...");
- scanf("%s", &str);
+ scanf("%s", str);
  int i, j, Count=0;
  printf("\n");
   for(i=0;str[i]!='\0';i++)
