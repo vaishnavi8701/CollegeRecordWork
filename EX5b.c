@@ -5,7 +5,7 @@ void main()
   char Str[100];
   int i, Vowel=0;
   printf("\nEnter A String...");
-  scanf("%s", &Str);
+  scanf("%s", Str);
    for(i=0;Str[i]!='\0';i++)
    {
        if(Str[i]=='a' || Str[i]=='A' || Str[i]=='e' || Str[i]=='E' ||
