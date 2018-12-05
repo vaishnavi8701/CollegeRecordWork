@@ -16,7 +16,7 @@ void main()
       switch(Choice)
        {
          case 1:printf("\n\nEnter A String...");
-                scanf("%s", &s);
+                scanf("%s", s);
                 int Flag=1;
                  break;
          case 2:if(Flag==1)
