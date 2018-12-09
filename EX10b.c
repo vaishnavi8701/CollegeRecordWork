@@ -19,6 +19,8 @@ void main()
    {
     fgets(Str, 100, fptr1);
     fputs(Str, fptr2);
+     if(feof(fptr1))
+      break;
    }
  fclose(fptr1);
  fclose(fptr2);
