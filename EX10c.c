@@ -3,11 +3,15 @@ void main()
 {
  FILE *fptr1;
  fptr1=fopen("readFile.txt", "r");
- int Lines=0, Ch=0;
+ int Lines=0, Count=0;
+ char Ch;
   while(!(feof(fptr1)))
    {
-     fgetc(fptr1);
-     Ch++;
+     Ch=fgetc(fptr1);
+      if(Ch=='\n')
+       Lines++;
+     Count++;
    }
- printf("\nThe Number Of Characters In The File Is...%d", Ch);   
+ printf("\nThe Number Of Characters In The File Is...%d", Count);
+ printf("\nThe Number Of Lines In The File Is...%d\n", Lines);
 }
