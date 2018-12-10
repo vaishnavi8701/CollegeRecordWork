@@ -12,17 +12,16 @@ struct Employee
   struct Date DOJ;
 };
 void Menu();
-void readDetails();
+struct Employee* readDetails(int n);
+void minSalary(struct Employee*, int);
 void main()
 {
   Menu();
 }
-void readDetails()
+struct Employee* readDetails(int n)
 {
   struct Employee *Ptr;
-  int n, i;
-  printf("\nEnter The Number Of Employees...");
-  scanf("%d", &n);
+  int i;
   Ptr=(struct Employee*)malloc(n*sizeof(struct Employee));
    for(i=0;i<n;i++)
     {
@@ -37,10 +36,24 @@ void readDetails()
       printf("Enter Day, Month And Year Of Joining...");
       scanf("%d %d %d", &(Ptr+i)->DOJ.Day, &(Ptr+i)->DOJ.Month, &(Ptr+i)->DOJ.Year);
     }
+    return Ptr;
+}
+void minSalary(struct Employee *Ptr, int n)
+{
+  float minSalary=*Ptr->empSalary;
+  for(i=1;i<n;i++)
+   {
+    if(minSalary>*(Ptr+i)->Salary)
+     {
+       minSalary=*(Ptr+i)->Salary;
+     }
+   }
+   printf("%f", minSalary);
 }
 void Menu()
 {
   int Choice;
+  struct Employee *Pointer;
    while(Choice!=6)
     {
      printf("\nEnter Any One Of The Following Choices:-");
@@ -54,8 +67,13 @@ void Menu()
      scanf("%d", &Choice);
       switch(Choice)
        {
-         case 1:readDetails();
+         case 1:int n;
+         printf("\nEnter The Number Of Employees...");
+         scanf("%d", &n);
+         Pointer=readDetails(n);
                  break;
+          case 2:minSalary(Pointer, n);
+                  break;
        }
-    }   
+    }
 }
