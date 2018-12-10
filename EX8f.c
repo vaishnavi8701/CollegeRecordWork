@@ -1,4 +1,5 @@
 # include <stdio.h>
+# include <stdlib.h>
 struct Date
 {
   int Day, Month, Year;
@@ -18,23 +19,23 @@ void main()
 }
 void readDetails()
 {
-  struct Employee *ptr;
+  struct Employee *Ptr;
   int n, i;
   printf("\nEnter The Number Of Employees...");
   scanf("%d", &n);
-  ptr=(struct Employee*)malloc(n*sizeof(struct Employee));
+  Ptr=(struct Employee*)malloc(n*sizeof(struct Employee));
    for(i=0;i<n;i++)
     {
       printf("\nEnter Employee Code...");
-      scanf("%d", &Var.empCode);
+      scanf("%d", &(Ptr+i)->empCode);
       printf("Enter Employee Name...");
-      scanf("%s", Var.empName);
+      scanf("%s", &(Ptr+i)->empName);
       printf("Enter Employee Salary...");
-      scanf("%f", &Var.empSalary);
+      scanf("%f", &(Ptr+i)->empSalary);
       printf("Enter Employee Department Number...");
-      scanf("%d", &Var.deptNo);
+      scanf("%d", &(Ptr+i)->deptNo);
       printf("Enter Day, Month And Year Of Joining...");
-      scanf("%d %d %d", &Var.DOJ.Day, &Var.DOJ.Month, &Var.DOJ.Year);
+      scanf("%d %d %d", &(Ptr+i)->DOJ.Day, &(Ptr+i)->DOJ.Month, &(Ptr+i)->DOJ.Year);
     }
 }
 void Menu()
@@ -53,7 +54,8 @@ void Menu()
      scanf("%d", &Choice);
       switch(Choice)
        {
-         case 1:
-         readDetails(n);
+         case 1:readDetails();
+                 break;
        }
+    }   
 }
