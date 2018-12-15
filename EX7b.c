@@ -10,7 +10,9 @@ void main()
 }
 int computeFunction(int a, int b)
 {
-  if(b<=a)
-   return computeFunction(a-b, b)+1;
- return 0;
+ int f;
+  if(a<b)
+   return 0;
+ f=computeFunction(a-b, b)+1;
+   return f;
 }
