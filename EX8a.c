@@ -5,36 +5,17 @@ struct Ticket
  int seatNo, custAge;
  float ticketCost;
 };
-int readDetails(struct Ticket []);
 void printTicket(struct Ticket [], int);
 void main()
 {
- struct Ticket Var[10];
- int ticketNo=readDetails(Var);
- printTicket(Var, ticketNo);
-}
-int readDetails(struct Ticket Obj[])
-{
-  printf("\n---------Boat Ticket Booking---------\n");
-  int n=0;
-  char Ch='y';
-   do
-    {
-     printf("\nEnter The Customer Name...");
-     scanf("%s", Obj[n].custName);
-     printf("Enter The Customer Age...");
-     scanf("%d", &Obj[n].custAge);
-     printf("Enter The Boarding Time...");
-     scanf("%s", Obj[n].boardTime);
-     printf("Enter The Seat Number...");
-     scanf("%d", &Obj[n].seatNo);
-     printf("Enter The Ticket Cost...");
-     scanf("%f", &Obj[n].ticketCost);
-     n++;
-     printf("\nWant To Book Another Ticket<y/n>...");
-     scanf(" %c", &Ch);
-   }while(Ch=='y' && n<=10);
- return n;
+ struct Ticket Var[5] ={
+                       {"Neel", "12:30", 12, 18, 1200},
+                       {"Deepak", "11:30", 11, 45, 1250},
+                       {"Anish", "11:45", 10, 21, 1300},
+                       {"Kushal", "12:00", 15, 25, 1500},
+                       {"Krish", "01:00", 19, 27, 2000}
+                       };
+ printTicket(Var, 5);
 }
 void printTicket(struct Ticket Obj[], int n)
 {
