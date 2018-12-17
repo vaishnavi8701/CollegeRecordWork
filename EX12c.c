@@ -1,18 +1,9 @@
 # include <stdio.h>
-void printValues();
-int main()
+# define Max(a, b) a>b?a:b
+void main()
 {
- printValues();
- printValues();
- printValues();
- printf("\n");
- return 0;
-}
-void printValues()
-{
- auto int x = 10;
- register int y = 20;
- printf("\nx: %d\ty: %d",x,y);
- x++;
- y++;
+  int Num1, Num2;
+  printf("\nEnter Two Numbers...");
+  scanf("%d %d", &Num1, &Num2);
+  printf("The Greater Of The Two Numbers Is...%d\n", Max(Num1, Num2));
 }
