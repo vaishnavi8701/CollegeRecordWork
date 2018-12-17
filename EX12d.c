@@ -10,8 +10,8 @@ int main()
 }
 void printValues()
 {
- static int x = 10;
- auto int y = 20;
+ auto int x = 10;
+ register int y = 20;
  printf("\nx: %d\ty: %d",x,y);
  x++;
  y++;
