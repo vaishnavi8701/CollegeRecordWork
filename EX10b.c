@@ -3,17 +3,17 @@
 void main()
 {
  char fileName1[10], fileName2[10], Str[100];
+ FILE *fptr1, *fptr2;
  printf("\nEnter The First Filename...");
  scanf("%s", fileName1);
- printf("Enter The Second Filename...");
- scanf("%s", fileName2);
- FILE *fptr1, *fptr2;
  fptr1=fopen(fileName1, "r");
   if(fptr1==NULL)
    {
      printf("\nFile Does Not Exist.");
      exit(0);
    }
+ printf("Enter The Second Filename...");
+ scanf("%s", fileName2);
  fptr2=fopen(fileName2, "w");
   while(!(feof(fptr1)))
    {
