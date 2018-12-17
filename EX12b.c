@@ -1,10 +1,11 @@
 # include <stdio.h>
-# define Cube(x) x*x*x
+# define Pi 3.142
 void main()
 {
- int Num, Res;
- printf("\nEnter A Number...");
- scanf("%d", &Num);
- Res=Cube(Num);
- printf("The Cube Of %d Is...%d\n", Num, Res);  
+  int r;
+  float Area;
+  printf("\nEnter The Radius Of The Circle...");
+  scanf("%d", &r);
+  Area=Pi*r*r;
+  printf("The Area Of The Circle Is...%.3f\n", Area);
 }
