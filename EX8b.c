@@ -2,7 +2,7 @@
 struct Ticket
 {
 char name[20], date[20], source[20], dist[20], tname[20];
-int age,seatno,clas,id;
+int age,seatno,class,id;
 float cost;
 char status;
 };
@@ -27,8 +27,28 @@ int main()
       {
        case 1:do
                {
-                printf("\nEnter the name,date,source,distination,train name,age,seatno,class,id,cost,status:");
-                scanf("%s%s%s%s%s%d%d%d%d%f %c",t[i].name,t[i].date,t[i].source,t[i].dist,t[i].tname, &t[i].age,&t[i].seatno,&t[i].clas,&t[i].id,&t[i].cost,&t[i].status);
+                printf("\nEnter Ticket Id...");
+                scanf("%d", &Obj.ticketId);
+                printf("Enter The Customer Name...");
+                scanf("%d", Obj[i].custName);
+                printf("Enter The Departure Date...");
+                scanf("%s", Obj[i].DOD);
+                printf("Enter The Starting Point...");
+                scanf("%s", Obj[i].startPoint);
+                printf("Enter The Destination...");
+                printf("%s", Obj[i].destPoint);
+                printf("Enter The Train Name...");
+                scanf("%d", &Obj[i].trainName);
+                printf("Enter Customer Age...");
+                scanf("%d", &Obj[i].custAge);
+                printf("Enter The Seat Number...");
+                scanf("%d", &Obj[i].seatNo);
+                printf("Enter Customer Class...");
+                scanf("%s", &Obj[i].custClass)
+                printf("Enter Ticket Cost...");
+                scanf("%f", &Obj[i].ticketCost);
+                printf("Enter Ticket Status<y/n>...");
+                scanf("%c", &Obj[i].Status);
                 i++;
                 printf("\nDo you want to book another ticket?(y/n)"); scanf(" %c",&ch);
 }             while(ch == 'y' && i<=100);
@@ -60,7 +80,7 @@ int search(struct ticket t[],int n,int id)
 {
 int i; for(i=0;i<n;i++)
 {
-if(t[i].id == id)
+if(t[i].id==id)
 {
 printf("\n	");
 printf("\nName: %s\nDate: %s\nSource: %s\nDestination: %s\nTrain name: %s\nAge: %d\nSeat.no: %d\nClass: %d\nId: %d\nCost: %f\nStatus: %c",t[i].name,t[i].date,t[ i].source,t[i].dist,t[i].tname,t[i].age,t[i].seatno,t[i].clas,t[i].id,t[i].cost,t[i].status);
