@@ -1,12 +1,10 @@
 # include <stdio.h>
-# define Pi 3.142
-int main()
+# define Square(x) x*x
+void main()
 {
-  int r;
-  float Area;
-  printf("\nEnter The Radius Of The Circle...");
-  scanf("%d", &r);
-  Area=Pi*r*r;
-  printf("The Area Of The Circle Is...%f\n", Area);
-  return 0;
+ int Num, Res;
+ printf("\nEnter A Number...");
+ scanf("%d", &Num);
+ Res=Square(Num);
+ printf("The Square Of The Number Is...%d\n", Res);
 }
