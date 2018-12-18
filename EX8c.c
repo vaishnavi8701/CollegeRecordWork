@@ -1,15 +1,18 @@
 # include <stdio.h>
-union Sample
+union Area
 {
-  int x;
-  float y;
+ int Side;
+ float Radius, Area;
 };
-int main()
+void main()
 {
- union Sample Var;
- Var.x=2;
- printf("\nThe Value Of x Is...%d", Var.x);
- Var.y=2.745;
- printf("\nThe Value Of y Is...%.3f\n", Var.y);
- return 0;
+ union Area Var;
+ printf("\nEnter The Side Of The Square...");
+ scanf("%d", &Var.Side);
+ Var.Area=Var.Side*Var.Side;
+ printf("The Area Of The Square Is...%.0f\n", Var.Area);
+ printf("\nEnter The Radius Of The Circle...");
+ scanf("%f", &Var.Radius);
+ Var.Area=3.142*Var.Radius*Var.Radius;
+ printf("The Are Of The Circle Is...%.2f\n", Var.Area);
 }
