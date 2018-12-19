@@ -1,5 +1,4 @@
 # include <stdio.h>
-# include <math.h>
 double Fact(int Num);
 double Power(int Base, int Exponenet);
 void main()
@@ -11,7 +10,7 @@ void main()
   printf("Enter The Number Of Terms...");
   scanf("%d", &n);
    for(i=1;i<=n;i++)
-    Result+=(pow(x, i)/Fact(i));
+    Result+=(Power(x, i)/Fact(i));
   printf("\nThe Sum Of The Series Is...%.3lf\n", Result);
 }
 double Power(int Base, int Exponent)
