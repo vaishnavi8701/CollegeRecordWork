@@ -11,6 +11,13 @@ class Travel
     {
         noOfAdults = noOfChildren = Distance = totalCost = 0;
     }
+    Travel(int Num1, int Num2, float Space, float Price)
+    {
+        noOfAdults = Num1;
+        noOfChildren = Num2;
+        Distance = Space;
+        totalCost = Price;
+    }
     Travel(Travel &t)
     {
         noOfAdults = t.noOfAdults;
@@ -20,7 +27,7 @@ class Travel
     }
     void getDetails()
     {
-        cout << "Enter The Number Of Adults : ";
+        cout << "\nEnter The Number Of Adults : ";
         cin >> noOfAdults;
         cout << "Enter The Number Of Children : ";
         cin >> noOfChildren;
