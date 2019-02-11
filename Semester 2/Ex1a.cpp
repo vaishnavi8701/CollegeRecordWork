@@ -39,4 +39,3 @@ int main(void)
     cout << "\nSum Of The Two Times Is..." << Hours << ":" << Minutes << ":" << Seconds << '\n';
     return 0;
 }
-
