@@ -45,4 +45,3 @@ int main(void)
    cout << "The sum of the numbers is : " << Sum << endl;
    return 0;
 }
-                                                                                                                                                
