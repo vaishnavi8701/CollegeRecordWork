@@ -34,21 +34,23 @@ class Travel
         cout << "Enter The Travel Distance : ";
         cin >> Distance;
     }
-    void computeCost()
+    int computeCost()
     {
-        totalCost = Distance * ( (noOfAdults * 8) + (noOfChildren * 5) );
          if(Distance >= 500)
           {
-            Distance -= 500;
-            totalCost += Distance *( (noOfAdults * 10) + (noOfChildren * 6) );
+            int d = Distance - 500;
+            totalCost += d * ( (noOfAdults * 10) + (noOfChildren * 6) );
+            totalCost += 500 * ( (noOfAdults * 8) + (noOfChildren * 5) );
+            return 0;
           }
+        totalCost = Distance * ( (noOfAdults * 8) + (noOfChildren * 5) );
     }
     void displayDetails()
     {
         cout << "\nNumber Of Adults : " << noOfAdults
              << "\nNumber Of Children : " << noOfChildren
-             << "\nTravel Distance : " << Distance
-             << "\nTotal Cost : " << totalCost
+             << "\nTravel Distance : " << Distance << " Km"
+             << "\nTotal Cost : Rs. " << totalCost << "/-"
              << "\n";
     }
 ~Travel()
