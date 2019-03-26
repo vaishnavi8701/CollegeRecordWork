@@ -4,8 +4,8 @@ using namespace std;
 
 class Time
 {
-  public:
     int Hours, Minutes, Seconds;
+  public:
     void readTime()
     {
         cout << "\nEnter Number Of Hours...";
@@ -15,6 +15,14 @@ class Time
         cout << "Enter Number Of Seconds...";
         cin >> Seconds;
     }
+    void addTime(Time t1, Time t2)
+    {
+        Seconds = t1.Seconds + t2.Seconds;
+        Minutes = t1.Minutes + t2.Minutes + (Seconds / 60);
+        Hours = t1.Hours + t2.Hours + (Minutes / 60);
+        Seconds %= 60;
+        Minutes %= 60;
+    }
     void displayTime()
     {
         cout << "\nTime In Hours : Minutes : Seconds Format Is " << Hours << ":" << Minutes << ":" << Seconds << '\n';
@@ -23,19 +31,10 @@ class Time
 
 int main(void)
 {
-    Time Obj1, Obj2;
-    int Hours, Minutes, Seconds;
-    cout << "\nTime 1:-\n";
+    Time Obj1, Obj2, Obj3;
     Obj1.readTime();
-    Obj1.displayTime();
-    cout << "\nTime 2:-\n";
     Obj2.readTime();
-    Obj2.displayTime();
-    Seconds = Obj1.Seconds + Obj2.Seconds;
-    Minutes = Obj1.Minutes + Obj2.Minutes + (Seconds / 60);
-    Hours = Obj1.Hours + Obj2.Hours + (Minutes / 60);
-    Seconds %= 60;
-    Minutes %= 60;
-    cout << "\nSum Of The Two Times Is..." << Hours << ":" << Minutes << ":" << Seconds << '\n';
+    Obj3.addTime(Obj1, Obj2);
+    Obj3.displayTime();
     return 0;
 }
