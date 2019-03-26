@@ -2,56 +2,43 @@
 
 using namespace std;
 
-class Matrix
+class Array
 {
-    int Arr[3][3];
   public:
-    int readMatrix()
-    {
-          for(int i = 0 ; i < 3 ; i++)
-           {
-              for(int j = 0 ; j < 3 ; j++)
-               {
-                  cin >> Arr[i][j];
-               }
-           }
-    }
 
-    int printMatrix()
-    {
-          for(int i = 0 ; i < 3 ; i++)
+   void calcSum(int intArr[5])
+   {
+        int Sum = 0;
+        cout << "\nEnter 5 Array Elements : ";
+          for(int i = 0 ; i < 5 ; i++)
            {
-              for(int j = 0 ; j < 3 ; j++)
-               {
-                 cout << Arr[i][j] << " ";
-               }
-             cout << endl;
+              cin >> intArr[i];
+              Sum += intArr[i];
            }
-    }
+        cout << "The Sum Of The Array Elements Is : " << Sum << endl;
+   }
 
-    Matrix operator +(Matrix Obj)
-    {
-      Matrix Res;
-          for(int i = 0 ; i < 3 ; i++)
+   void calcSum(float floatArr[5])
+   {
+        float Sum = 0;
+        cout << "\nEnter 5 Array Elements : ";
+          for(int i = 0 ; i < 5 ; i++)
            {
-              for(int j = 0 ; j < 3 ; j++)
-               {
-                 Res.Arr[i][j] = Arr[i][j] + Obj.Arr[i][j];
-               }
+              cin >> floatArr[i];
+              Sum += floatArr[i];
            }
-      return Res;
-    }
+        cout << "The Sum Of The Array Elements Is : " << Sum << endl;
+   }
+
 };
 
 int main(void)
 {
-   Matrix m1, m2;
-   cout << "\nEnter The First Matrix :-\n";
-   m1.readMatrix();
-   cout << "\nEnter The Second Matrix :-\n";
-   m2.readMatrix();
-   cout << "\nThe Sum Of The Two Matrices Is :-\n";
-   Matrix Sum = m1 + m2;
-   Sum.printMatrix();
-   return 0;
+        Array Obj;
+        int iArr[5];
+        float fArr[5];
+        Obj.calcSum(iArr);
+        Obj.calcSum(fArr);
+        cout << endl;
+        return 0;
 }
