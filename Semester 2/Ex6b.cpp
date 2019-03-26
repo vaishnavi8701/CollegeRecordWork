@@ -14,43 +14,46 @@ class Stack
     {
         Top = -1;
         Size = 5;
-         for(int i = 0 ; i < Size ; i++)
-          {
-            Arr[i] = NULL;
-          }
     }
 
     void Push(T n)
     {
-        Top++;
-
-        if(Top <= Size - 1)
+        if(Top == Size - 1)
          {
-           Arr[Top] = n;
+           cout << "Stack Overflow. Cannot insert element.\n";
          }
-
-        else if(Top == Size)
-         {
-           cout << "Stack Is Full.";
-         }
-
         else
          {
-           cout << "Stack Overflow...";
+            Arr[++Top] = n;
          }
     }
 
     void Pop()
- {
-        Top--;
+    {
+        if(Top == -1)
+          {
+              cout << "\nStack underflow. No element to pop.\n";
+          }
+
+        else
+          {
+              cout << '\n' << Arr[Top--] << " has been popped.\n";
+          }
+    }
+
+    T peek()
+    {
+        return Arr[Top];
     }
 
     void displayStack()
     {
-          for(int i = 0 ; i < Size ;i++)
+        cout << "\nThe stack elements are : ";
+          for(int i = Top ; i >= 0 ; i--)
           {
                 cout << Arr[i] << " ";
           }
+      cout << endl;
     }
 };
 
@@ -58,9 +61,9 @@ void Menu();
 void stackMenu()
 {
  int Choice, Ch;
-   Stack <int>iObj;
-   Stack <float>fObj;
-   Stack <char>cObj;
+   Stack <int> iObj;
+   Stack <float> fObj;
+   Stack <char> cObj;
     while(Choice != 4)
       {
         cout << "\nChoose Any One Of The Following Choices :-"
@@ -72,13 +75,10 @@ void stackMenu()
         cin >> Choice;
          switch(Choice)
           {
-            case 1 : while(iObj.Top <= iObj.Size)
-                      {
-                        cin >> Ch;
-                        iObj.Push(Ch);
-                      }
+            case 1 : cout << "\nEnter the element to be inserted : ";
+                     cin >> Ch;
+                     iObj.Push(Ch);
                       break;
-
 
             case 2 : iObj.Pop();
                       break;
@@ -122,7 +122,6 @@ void Menu()
 
 int main(void)
 {
-   Menu();
+  Menu();
 	return 0;
 }
-   
