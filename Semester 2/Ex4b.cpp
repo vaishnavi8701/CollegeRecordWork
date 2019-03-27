@@ -1,88 +1,104 @@
 # include <iostream>
+# include <string>
 
 using namespace std;
 
-class Personal
+class University
+{
+  public:
+    string Dept;
+    void readData()
+    {
+        cout << "Enter Department Name : ";
+        cin >> Dept;
+    }
+    void displayData()
+    {
+        cout << "\nName Of Department Is : " << Dept;
+    }
+};
+
+class Student : public virtual University
 {
 
   protected:
 
-      char Name[20], Dept[20], DOB[20], phoneNo[20];
-      int rollNo;
+      string Name, Dob, Gender;
 
   public:
 
     void readData()
     {
-        cout << "\nEnter Student Roll Number : ";
-        cin >> rollNo;
         cout << "Enter Student Name : ";
         cin >> Name;
+        cout << "Enter Student Gender : ";
+        cin >> Gender;
         cout << "Enter Student DOB : ";
-        cin >> DOB;
-        cout << "Enter Student Department : ";
-        cin >> Dept;
-        cout << "Enter Student Phone Number : ";
-        cin >> phoneNo;
-    }
-
-};
-
-class Marks
-{
-
-  protected:
-
-    float Marks[5], Avg;
-
-  public:
-
-      void getMarks()
-      {
-        float Total = 0;
-        cout << "Enter Student Marks :-\n";
-            for(int i = 0 ; i < 5 ; i++)
-              {
-                  cout << "Subject " << i + 1 << " : ";
-                  cin >> Marks[i];
-                  Total += Marks[i];
-              }
-        Avg = Total / 5.0;
-      }
-
-      int returnAvg()
-      {
-          return Avg;
-      }
-
-};
-
-class CMS : public Personal, public Marks
-{
-  public:
-
-    void readData()
-    {
-        Personal::readData();
-        Marks::getMarks();
+        cin >> Dob;
     }
 
     void displayData()
     {
-        cout << "\nRoll Number : " << rollNo
-             << "\nName : " << Name
-             << "\nDate Of Birth : " << DOB
-             << "\nDepartment : " << Dept
-             << "\nPhone Number : " << phoneNo
-             << "\nAverage Marks : " << Marks::returnAvg()
+        cout << "\nStudent Name : " << Name
+             << "\nStudent Gender : " << Gender
+             << "\nStudent DOB : " << Dob
              << "\n";
     }
 
 };
 
+class Faculty : public virtual University
+{
+  public:
+    string Name, Dob, Gender;
+
+    void readData()
+    {
+        cout << "Enter Faculty Name : ";
+        cin >> Name;
+        cout << "Enter Faculty Gender : ";
+        cin >> Gender;
+        cout << "Enter Faculty DOB : ";
+        cin >> Dob;
+    }
+
+    void displayData()
+    {
+        cout << "\nFaculty Name : " << Name
+             << "\nFaculty Gender : " << Gender
+             << "\nFaculty DOB : " << Dob
+             << "\n";
+    }
+
+};
+
+class Subject : public Student, public Faculty
+{
+  public:
+    string Sub1, Sub2;
+
+    void readData()
+    {
+        University::readData();
+        Student::readData();
+        Faculty::readData();
+        cout << "\nEnter Names Of Subjects 1 And 2 : ";
+        cin >> Sub1 >> Sub2;
+    }
+    void displayData()
+    {
+        University::displayData();
+        Student::displayData();
+        Faculty::displayData();
+        cout << "\nSubject 1 : " << Sub1
+             << "\nSubject 2 : " << Sub2
+             << "\n";
+    }
+};
+
 int main(void)
 {
-    CMS Obj;
+    Subject Obj;
     Obj.readData();
     Obj.displayData();
     return 0;
