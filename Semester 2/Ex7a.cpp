@@ -2,28 +2,42 @@
 
 using namespace std;
 
-double division(int a, int b)
+class Divide
 {
-   if(b == 0)
-    {
-      throw "Division by zero is not permitted!";
-    }
-   return (a / b);
-}
+    int a, b, c;
 
-int main()
-{
-   int x = 50;
-   int y = 0;
-   double z;
-   try
+  public:
+
+    void readData()
     {
-      z = division(x, y);
-      cout << z << endl;
+        cout << "\nEnter Two Numbers : ";
+        cin >> a >> b;
     }
-    catch(const char *msg)
-      {
-        cout << msg << endl;
-      }
-   return 0;
+
+    void computeResult()
+    {
+        try
+          {
+              if(b == 0)
+                {
+                    throw "Division by zero is not permitted.";
+                }
+              else
+                {
+                    c = a / b;
+                    cout << c << " is the quotient.";
+                }
+          }
+        catch(const char *Str)
+          {
+              cout << Str << endl;
+          }
+    }
+};
+
+int main(void)
+{
+    Obj.readData();
+    Obj.computeResult();
+    return 0;
 }
