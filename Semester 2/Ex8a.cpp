@@ -93,39 +93,41 @@ void Menu()
                                            it = L1.begin();
                                            advance(it, Pos);
                                            L1.erase(it);
-                                           break;
+                                            break;
 
                                   case 3 : L1.pop_back();
-                                             break;
+                                            break;
 
                                   default : cout << "\nInvalid Choice.\n";
                               }
+                          cout << "\nElement Deleted Successfully.\n";
                             break;
 
                     case 6 : cout << "\nEnter The Number Of Elements To Be Inserted (Second List) : ";
-                           cin  >> n;
-                           cout << "Enter " << n << " elements : ";
-                            for(int i = 0 ; i < n ; i++)
-                              {
-                                  cin >> Num;
-                                  L2.push_back(Num);
-                              }
-                            L1.merge(L2);
-                            cout << "\nLists merged successfully\n";
-                            break;
+                             cin  >> n;
+                             cout << "Enter " << n << " elements : ";
+                              for(int i = 0 ; i < n ; i++)
+                               {
+                                   cin >> Num;
+                                   L2.push_back(Num);
+                               }
+                             L1.merge(L2);
+                             cout << "\nLists merged successfully\n";
+                              break;
 
                     case 7 : cout << "\nThe List Is : ";
-                           for(it = L1.begin() ; it != L1.end() ; it++)
-                            {
-                                cout << *it << " ";
-                            }
-                            break;
+                              for(it = L1.begin() ; it != L1.end() ; it++)
+                               {
+                                 cout << *it << " ";
+                               }
+                             cout << endl;
+                              break;
 
                     case 8 : cout << "\nPress any key to exit.";
-                            break;
+                              break;
 
                     default : cout << "\nInvalid Choice.\n";
-                             break;
+                               break;
 
                 }
         }
