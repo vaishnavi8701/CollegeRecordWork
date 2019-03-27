@@ -78,7 +78,7 @@ void Menu()
                                 }
                               break;
 
-                  case 5 : cout << "\n1. Delete From The Beginning"
+                    case 5 : cout << "\n1. Delete From The Beginning"
                                 << "\n2. Delete From The Middle"
                                 << "\n3. Delete From The End"
                                 << "\nYour Choice Is : ";
@@ -102,7 +102,7 @@ void Menu()
                               }
                             break;
 
-                  case 6 : cout << "\nEnter The Number Of Elements To Be Inserted (Second List) : ";
+                    case 6 : cout << "\nEnter The Number Of Elements To Be Inserted (Second List) : ";
                            cin  >> n;
                            cout << "Enter " << n << " elements : ";
                             for(int i = 0 ; i < n ; i++)
@@ -114,17 +114,17 @@ void Menu()
                             cout << "\nLists merged successfully\n";
                             break;
 
-                  case 7 : cout << "\nThe List Is : ";
+                    case 7 : cout << "\nThe List Is : ";
                            for(it = L1.begin() ; it != L1.end() ; it++)
                             {
                                 cout << *it << " ";
                             }
                             break;
 
-                  case 8 : cout << "\nPress any key to exit.";
+                    case 8 : cout << "\nPress any key to exit.";
                             break;
 
-                  default : cout << "\nInvalid Choice.\n";
+                    default : cout << "\nInvalid Choice.\n";
                              break;
 
                 }
