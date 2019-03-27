@@ -41,52 +41,61 @@ class Stack
           }
     }
 
-    T peek()
+    T Peep()
     {
         return Arr[Top];
     }
 
     void displayStack()
     {
-        cout << "\nThe stack elements are : ";
-          for(int i = Top ; i >= 0 ; i--)
-          {
-                cout << Arr[i] << " ";
-          }
-      cout << endl;
+      if(Top == -1)
+       {
+           cout << "\nStack Is Empty. Nothing to display.";
+       }
+      else
+       {
+         cout << "\nThe stack elements are : ";
+           for(int i = Top ; i >= 0 ; i--)
+            {
+              cout << Arr[i] << " ";
+            }
+         cout << endl;
+       }
     }
 };
 
 void Menu();
-void stackMenu()
+template <class T, class T1>
+void stackMenu(T Obj, T1 Ch)
 {
- int Choice, Ch;
-   Stack <int> iObj;
-   Stack <float> fObj;
-   Stack <char> cObj;
-    while(Choice != 4)
+   int Choice;
+    while(Choice != 5)
       {
         cout << "\nChoose Any One Of The Following Choices :-"
              << "\n1. Populate The Stack"
              << "\n2. Pop An Element"
-             << "\n3. Dislay The Stack"
-             << "\n4. Return To Main Menu"
+             << "\n3. Peep Into The Stack"
+             << "\n4. Dislay The Stack"
+             << "\n5. Return To Main Menu"
              << "\nYour Choice Is...";
         cin >> Choice;
          switch(Choice)
           {
             case 1 : cout << "\nEnter the element to be inserted : ";
                      cin >> Ch;
-                     iObj.Push(Ch);
+                     Obj.Push(Ch);
                       break;
 
-            case 2 : iObj.Pop();
+            case 2 : Obj.Pop();
                       break;
 
-            case 3 : iObj.displayStack();
+            case 3 : cout << "\nThe Element At The Top Of The Stack Is : " << Obj.Peep() << endl;
                       break;
 
-            case 4 : Menu();
+            case 4 : Obj.displayStack();
+                      break;
+
+            case 5 : Menu();
                       break;
 
             default : cout << "\nInvalid Choice.\n";
@@ -97,7 +106,12 @@ void stackMenu()
 
 void Menu()
 {
-   int Choice;
+   int Choice, iNum;
+   float fNum;
+   char cNum;
+   Stack <int> iObj;
+   Stack <float> fObj;
+   Stack <char> cObj;
      while(Choice != 4)
       {
         cout << "\nChoose Any One Of The Following Choices :-"
@@ -109,11 +123,13 @@ void Menu()
         cin >> Choice;
          switch(Choice)
           {
-            case 1 :
-            case 2 :
-            case 3 : stackMenu();
+            case 1 : stackMenu(iObj, iNum);
                       break;
-            case 4 : cout << "\nPress Any key to exit the program.\n";
+            case 2 : stackMenu(fObj, fNum);
+                       break;
+            case 3 : stackMenu(cObj, cNum);
+                      break;
+            case 4 : exit(0);
                       break;
             default : cout << "\nInvalid Choice.\n";
           }
