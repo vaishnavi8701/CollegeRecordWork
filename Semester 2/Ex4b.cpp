@@ -5,11 +5,11 @@ using namespace std;
 
 class University
 {
-  public:
     string Dept;
+  public:
     void readData()
     {
-        cout << "Enter Department Name : ";
+        cout << "\nEnter Department Name : ";
         cin >> Dept;
     }
     void displayData()
@@ -20,13 +20,8 @@ class University
 
 class Student : public virtual University
 {
-
-  protected:
-
       string Name, Dob, Gender;
-
   public:
-
     void readData()
     {
         cout << "Enter Student Name : ";
@@ -49,12 +44,11 @@ class Student : public virtual University
 
 class Faculty : public virtual University
 {
-  public:
     string Name, Dob, Gender;
-
+  public:
     void readData()
     {
-        cout << "Enter Faculty Name : ";
+        cout << "\nEnter Faculty Name : ";
         cin >> Name;
         cout << "Enter Faculty Gender : ";
         cin >> Gender;
@@ -74,9 +68,8 @@ class Faculty : public virtual University
 
 class Subject : public Student, public Faculty
 {
-  public:
     string Sub1, Sub2;
-
+  public:
     void readData()
     {
         University::readData();
