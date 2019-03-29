@@ -6,10 +6,10 @@ template <class T>
 
 class Stack
 {
-  public:
-    int Top, Size;
-    T Arr[10];
+  int Top, Size;
+  T Arr[10];
 
+  public:
     Stack()
     {
         Top = -1;
