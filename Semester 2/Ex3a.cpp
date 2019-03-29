@@ -171,7 +171,8 @@ void Menu()
                     case 8 : exit(0);
                               break;
 
-                  default : cout << "\nInvalid Choice.\n";
+                  default : cout << "Invalid Choice.\n";
+                            continue;
                 }
             Res.printMatrix();
         }
