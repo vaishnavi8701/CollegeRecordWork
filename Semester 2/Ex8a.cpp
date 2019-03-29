@@ -10,17 +10,18 @@ void Menu()
     int Choice = 0, Pos, n, Num, Flag;
     list <int> L1, L2;
     list <int> ::iterator it;
-      while(Choice != 8)
+      while(Choice != 9)
         {
             cout << "\nChoose Any One Of The Following Choices :-"
                  << "\n1. Create A List"
                  << "\n2. Insert An Element Into The List"
                  << "\n3. Sort The List"
-                 << "\n4. Check If An Element Is In The List"
-                 << "\n5. Delete An Element From The List"
-                 << "\n6. Merge Two Lists"
-                 << "\n7. Display The List"
-                 << "\n8. Exit"
+                 << "\n4. Reverse The List"
+                 << "\n5. Check If An Element Is In The List"
+                 << "\n6. Delete An Element From The List"
+                 << "\n7. Merge Two Lists"
+                 << "\n8. Display The List"
+                 << "\n9. Exit"
                  << "\nYour Choice Is : ";
             cin >> Choice;
               switch(Choice)
@@ -65,7 +66,11 @@ void Menu()
                              cout << "\nList Sorted Sucessfully.\n";
                               break;
 
-                    case 4 : cout << "\nEnter The Element You Want To Check For : ";
+                    case 4 : L1.reverse();
+                             cout << "\nList Reversed Successfully.\n";
+                              break;
+
+                    case 5 : cout << "\nEnter The Element You Want To Check For : ";
                              cin >> Num;
                              Flag = binary_search(L1.begin(), L1.end(), Num);
                               if(Flag == 1)
@@ -78,12 +83,12 @@ void Menu()
                                 }
                               break;
 
-                    case 5 : cout << "\n1. Delete From The Beginning"
+                    case 6 : cout << "\n1. Delete From The Beginning"
                                 << "\n2. Delete From The Middle"
                                 << "\n3. Delete From The End"
                                 << "\nYour Choice Is : ";
-                           cin >> Choice;
-                            switch(Choice)
+                             cin >> Choice;
+                             switch(Choice)
                               {
                                   case 1 : L1.pop_front();
                                             break;
@@ -103,7 +108,7 @@ void Menu()
                           cout << "\nElement Deleted Successfully.\n";
                             break;
 
-                    case 6 : cout << "\nEnter The Number Of Elements To Be Inserted (Second List) : ";
+                    case 7 : cout << "\nEnter The Number Of Elements To Be Inserted (Second List) : ";
                              cin  >> n;
                              cout << "Enter " << n << " elements : ";
                               for(int i = 0 ; i < n ; i++)
@@ -115,7 +120,7 @@ void Menu()
                              cout << "\nLists merged successfully\n";
                               break;
 
-                    case 7 : cout << "\nThe List Is : ";
+                    case 8 : cout << "\nThe List Is : ";
                               for(it = L1.begin() ; it != L1.end() ; it++)
                                {
                                  cout << *it << " ";
@@ -123,7 +128,7 @@ void Menu()
                              cout << endl;
                               break;
 
-                    case 8 : cout << "\nPress any key to exit.";
+                    case 9 : cout << "\nPress any key to exit.";
                               break;
 
                     default : cout << "\nInvalid Choice.\n";
@@ -132,6 +137,7 @@ void Menu()
                 }
         }
 }
+
 int main(void)
 {
     Menu();
