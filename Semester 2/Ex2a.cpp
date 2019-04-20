@@ -1,92 +1,89 @@
 # include <iostream>
-# include <string>
 
 using namespace std;
 
-class Car
+class Travel
 {
-    int Cost;
-    string Make, Color;
-    static int Id;
-
+    int tCode, noOfAdults, noOfChildren;
+    float Distance, totalFare;
+    string Src, Dest;
   public:
-
-      Car()
-      {
-          Cost = 200000;
-          Make = "Hyundai";
-          Color = "Sky Blue";
-      }
-
-      void getData()
-      {
-          cout << "\nEnter The Car Make : ";
-          cin >> Make;
-          cout << "Enter The Color : ";
-          cin >> Color;
-          cout << "Enter The Car Cost : ";
-          cin >> Cost;
-      }
-
-      void putData()
-      {
-          cout << "\nCar ID : " << Id
-               << "\nCar Make : " << Make
-               << "\nCar Color : " << Color
-               << "\nCar Cost : " << Cost
-               << "\n";
-      }
-
-      class carUpdate
-      {
-          int Amount;
-        public:
-          void Update(Car &Obj)
+    Travel()
+    {
+        tCode = 1001;
+        Src = "Agra";
+        Dest = "Chennai";
+        Distance = 400.00;
+        noOfAdults = 3;
+        noOfChildren = 2;
+    }
+    Travel(const Travel &t)
+    {
+        tCode = t.tCode;
+        Src = t.Src;
+        Dest = t.Src;
+        Distance = t.Distance;
+        noOfAdults = t.noOfAdults;
+        noOfChildren = t.noOfChildren;
+    }
+    void getDetails()
+    {
+        cout << "\nEnter The Travel Code : ";
+        cin >> tCode;
+        cout << "Enter The Source : ";
+        cin >> Src;
+        cout << "Enter The Destination : ";
+        cin >> Dest;
+        cout << "Enter The Travel Distance : ";
+        cin >> Distance;
+        cout << "Enter The Number Of Adults : ";
+        cin >> noOfAdults;
+        cout << "Enter The Number Of Children : ";
+        cin >> noOfChildren;
+    }
+    int computeCost()
+    {
+      float childFare, adultFare;
+        if(Distance < 500)
           {
-              cout << "\nEnter The Amount To Be Incremented : ";
-              cin >> Amount;
-              Obj.Cost += Amount;
+              adultFare = 200 * noOfAdults;
+              childFare = 100 * noOfChildren;
           }
-      };
-
-      static void IDincrement()
-      {
-          Id++;
-      }
-
-      friend void Modify(Car &c);
+        else if(Distance > 500 && Distance < 1000)
+          {
+              adultFare = 300 * noOfAdults;
+              childFare = 150 * noOfChildren;
+          }
+        else
+          {
+            adultFare = 500 * noOfAdults;
+            childFare = 250 * noOfChildren;
+          }
+      totalFare = childFare + adultFare;
+    }
+    void displayDetails()
+    {
+      cout   << "\nTravel Code : " << tCode
+             << "\nNumber Of Adults : " << noOfAdults
+             << "\nNumber Of Children : " << noOfChildren
+             << "\nSource : " << Src
+             << "\nDestination : " << Dest
+             << "\nTravel Distance : " << Distance << " Km"
+             << "\nTotal Cost : Rs. " << totalFare << "/-"
+             << "\n";
+    }
+~Travel()
+     {
+        tCode = noOfAdults = noOfChildren = Distance = totalFare = 0;
+        Src[0] = Dest[0] = '\0';
+     }
 };
-
-int Car::Id = 100;
-
-void Modify(Car &c)
-{
-  cout << "\nEnter The Car Make : ";
-  cin >> c.Make;
-  cout << "Enter The Color : ";
-  cin >> c.Color;
-  cout << "Enter The Car Cost : ";
-  cin >> c.Cost;
-}
 
 int main(void)
 {
-    Car Obj, Obj1, Obj2;
-    Obj.putData();
-    cout << "\nCar 1:-\n";
-    Obj1.getData();
-    Car::IDincrement();
-    Obj1.putData();
-    cout << "\nCar 2:-\n";
-    Obj2.getData();
-    Car::IDincrement();
-    Obj2.putData();
-    Car::carUpdate Obj3;
-    cout << "\nUpdated Cost for Car 1:-\n";
-    Obj3.Update(Obj1);
-    Obj1.putData();
-    cout << "\nEnter modified detail for Car 2:-\n";
-    Modify(Obj2);
-    Obj2.putData();
-    return 0;
+   Travel Obj;
+   Obj.getDetails();
+   Obj.computeCost();
+   Obj.displayDetails();
+   return 0;
 }
