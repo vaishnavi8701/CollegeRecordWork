@@ -10,6 +10,7 @@ int printPos(int Arr[], int x)
       }
   return Arr[x - 1];
 }
+
 int main()
 {
     int Arr[5] = {1, 2, 3, 4, 5}, Num;
@@ -19,7 +20,7 @@ int main()
           cout << "\nEnter the position of the element you want to access : ";
           cin >> Pos;
           Num = printPos(Arr, Pos);
-          cout << Num << endl;
+          cout << "Element at position " << Pos << " is "<< Num << ".\n";
       }
     catch(const char *Msg)
       {
