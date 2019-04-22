@@ -126,10 +126,10 @@ print("String representation : ", str(myDict))
 print("Value at One is : ", myDict.get('Zero'))
 
 #List of keys
-print("the keys in the dictionary are : ", myDict.keys())
+print("The keys in the dictionary are : ", myDict.keys())
 
 #List of values
-print("the values in the dictionary are : ", myDict.values())
+print("The values in the dictionary are : ", myDict.values())
 
 #deleting dictionary elements
 del myDict['Three']
