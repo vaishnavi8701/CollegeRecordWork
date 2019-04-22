@@ -25,7 +25,7 @@ class Divide
               else
                 {
                     c = a / b;
-                    cout << c << " is the quotient.";
+                    cout << c << " is the quotient." << endl;
                 }
           }
         catch(const char *Str)
@@ -37,6 +37,7 @@ class Divide
 
 int main(void)
 {
+    Divide Obj;
     Obj.readData();
     Obj.computeResult();
     return 0;
