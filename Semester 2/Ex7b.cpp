@@ -25,6 +25,7 @@ class Stack
         else
          {
             Arr[++Top] = n;
+            cout << "Element Inserted Into The Stack Successfully.\n";
          }
     }
 
@@ -75,7 +76,7 @@ void stackMenu(T Obj, T1 Ch)
              << "\n1. Populate The Stack"
              << "\n2. Pop An Element"
              << "\n3. Peep Into The Stack"
-             << "\n4. Dislay The Stack"
+             << "\n4. Display The Stack"
              << "\n5. Return To Main Menu"
              << "\nYour Choice Is...";
         cin >> Choice;
