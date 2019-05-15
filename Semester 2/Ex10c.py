@@ -18,4 +18,4 @@ class Bar:
 >>> x
 >>> x = pkg.mod2.Bar()
 >>> foo()
->>>pkg
+>>> pkg
