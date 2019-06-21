@@ -84,9 +84,9 @@ void Menu()
                               break;
 
                     case 6 : cout << "\n1. Delete From The Beginning"
-                                << "\n2. Delete From The Middle"
-                                << "\n3. Delete From The End"
-                                << "\nYour Choice Is : ";
+                                  << "\n2. Delete From The Middle"
+                                  << "\n3. Delete From The End"
+                                  << "\nYour Choice Is : ";
                              cin >> Choice;
                              switch(Choice)
                               {
