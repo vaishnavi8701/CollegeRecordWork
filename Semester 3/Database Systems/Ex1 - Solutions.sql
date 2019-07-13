@@ -28,6 +28,16 @@ insert into DEPT_LOCATIONS values(5, 'Bellaire')
 insert into DEPT_LOCATIONS values(5, 'Sugarland')
 insert into DEPT_LOCATIONS values(5, 'Houston')
 
+--4. Table Name : PROJECT
+
+
+insert into PROJECT values(1,ProductX,Bellaire,5)
+insert into PROJECT values(2,ProductY,Sugarland,5)
+insert into PROJECT values(3,ProductZ,Houston,5)
+insert into PROJECT values(10,Computerization,Stafford,4)
+insert into PROJECT values(20,Reorganization,Houston,1)
+insert into PROJECT values(30,NewBenefits,Stafford,4)
+
 --5. Table Name : WORKS_ON
 create table WORKS_ON(ESSN int, PNO int, HOURS numeric(3,1), primary key(ESSN,PNO))
 
@@ -79,3 +89,9 @@ insert into STUDENT values(34,'Abner',20)
 
 --Queries
 alter table STUDENT add RANK int
+alter table STUDENT modify AGE int not null
+alter table CLIENT_MASTER modify BAL_DUE check(BAL_DUE >= 0)
+alter table STUDENT add primary key(SNO)
+alter table STUDENT add unique(SNAME)
+
+alter table STUDENT modify SNAME varchar(20)
