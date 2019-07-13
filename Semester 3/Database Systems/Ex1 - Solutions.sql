@@ -60,6 +60,16 @@ insert into DEPENDENT values(123456789,'Micheal','M','1988-01-04','SON')
 insert into DEPENDENT values(123456789,'Alice','F','1988-12-30','DAUGHTER')
 insert into DEPENDENT values(123456789,'Elizabeth','F','1967-05-05','SPOUSE')
 
+--7. Table Name : CLIENT_MASTER
+create table CLIENT_MASTER(CLIENT_NO varchar(6) primary key check(CLIENT_NO like 'C%'), NAME varchar(10) not null, CITY varchar(10), BAL_DUE numeric(10,2))
+
+insert into CLIENT_MASTER values('C00001','Karthik','Bombay',15000)
+insert into CLIENT_MASTER values('C00001','Karthik','Bombay',15000)
+insert into CLIENT_MASTER values('C00003','Pramada','Bomabay',50000)
+insert into CLIENT_MASTER values('C00004','Basu','Bomabay',0)
+insert into CLIENT_MASTER values('C00005','Ravi','Delhi',20000)
+insert into CLIENT_MASTER values('C00006','Ruk','Bombay',0)
+
 --8. Table Name : STUDENT
 create table STUDENT(SNO int, SNAME varchar(10), AGE int)
 
@@ -67,4 +77,5 @@ insert into STUDENT values(01,'Theodore',16)
 insert into STUDENT values(23,'Joy',18)
 insert into STUDENT values(34,'Abner',20)
 
+--Queries
 alter table STUDENT add RANK int
