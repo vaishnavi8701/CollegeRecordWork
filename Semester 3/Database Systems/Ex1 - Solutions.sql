@@ -75,12 +75,8 @@ create table CLIENT_MASTER(CLIENT_NO varchar(6) primary key check(CLIENT_NO like
 
 insert into CLIENT_MASTER values('C00001','Karthik','Bombay',15000)
 insert into CLIENT_MASTER values('C00002','Karthik','Bombay',15000)
-<<<<<<< HEAD
 insert into CLIENT_MASTER values('C00003','Pramada','Bombay',50000)
-=======
-insert into CLIENT_MASTER values('C00003','Pramada','Bomabay',50000)
->>>>>>> 467826c9127167f255e404b861ea8d95ebe3f892
-insert into CLIENT_MASTER values('C00004','Basu','Bomabay',0)
+insert into CLIENT_MASTER values('C00004','Basu','Bombay',0)
 insert into CLIENT_MASTER values('C00005','Ravi','Delhi',20000)
 insert into CLIENT_MASTER values('C00006','Ruk','Bombay',0)
 
