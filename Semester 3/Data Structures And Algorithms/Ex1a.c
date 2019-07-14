@@ -22,7 +22,7 @@ int main(void)
         scanf("%s", s[i].Name);
         printf("Enter marks out of 100 in 3 subjects : ");
         scanf("%d %d %d", &s[i].m1, &s[i].m2, &s[i].m3);
-        if(s[i].m1 >=45 && s[i].m2 >= 45 && s[i].m3 >=45)
+        if(s[i].m1 >= 45 && s[i].m2 >= 45 && s[i].m3 >=45)
           s[i].res = 1;
         else
           s[i].res = 0;
