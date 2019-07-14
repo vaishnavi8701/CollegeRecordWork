@@ -74,7 +74,7 @@ insert into DEPENDENT values(123456789,'Elizabeth','F','1967-05-05','SPOUSE')
 create table CLIENT_MASTER(CLIENT_NO varchar(6) primary key check(CLIENT_NO like 'C%'), NAME varchar(10) not null, CITY varchar(10), BAL_DUE numeric(10,2))
 
 insert into CLIENT_MASTER values('C00001','Karthik','Bombay',15000)
-insert into CLIENT_MASTER values('C00001','Karthik','Bombay',15000)
+insert into CLIENT_MASTER values('C00002','Karthik','Bombay',15000)
 insert into CLIENT_MASTER values('C00003','Pramada','Bomabay',50000)
 insert into CLIENT_MASTER values('C00004','Basu','Bomabay',0)
 insert into CLIENT_MASTER values('C00005','Ravi','Delhi',20000)
