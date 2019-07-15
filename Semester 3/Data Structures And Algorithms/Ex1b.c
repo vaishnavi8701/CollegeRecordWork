@@ -35,4 +35,5 @@ int main(void)
         printf("\nEmployee name : %s", empObj[i].EName);
         printf("\nTotal Take-Home Salary : %.2f\n", empObj[i].totSalary);
     }
+    return 0;
 }
