@@ -29,7 +29,7 @@ insert into DEPT_LOCATIONS values(5, 'Sugarland')
 insert into DEPT_LOCATIONS values(5, 'Houston')
 
 --4. Table Name : PROJECT
-
+create table PROJECT(PINT int primary key, PNAME varchar(10) not null, PLOCATION varchar(10) not null, DNUM int REFERENCES DEPARTMENT(DINT))
 
 insert into PROJECT values(1,'ProductX','Bellaire',5)
 insert into PROJECT values(2,'ProductY','Sugarland',5)
@@ -93,5 +93,6 @@ alter table STUDENT modify AGE int not null
 alter table CLIENT_MASTER modify BAL_DUE check(BAL_DUE >= 0)
 alter table STUDENT add primary key(SNO)
 alter table STUDENT add unique(SNAME)
-
+alter table STUDENT drop column RANK
+alter table STUDENT modify SNAME varchar(20)
 alter table STUDENT modify SNAME varchar(20)
