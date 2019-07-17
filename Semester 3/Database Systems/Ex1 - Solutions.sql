@@ -88,11 +88,71 @@ insert into STUDENT values(23,'Joy',18)
 insert into STUDENT values(34,'Abner',20)
 
 --Queries
+1
 alter table STUDENT add RANK int
-alter table STUDENT modify AGE int not null
-alter table CLIENT_MASTER modify BAL_DUE check(BAL_DUE >= 0)
+
+2
+alter table STUDENT alter column AGE int not null
+
+3
+alter table CLIENT_MASTER add check(BAL_DUE >= 0)
+
+4
+alter table STUDENT alter column SNO int not null
 alter table STUDENT add primary key(SNO)
+
+5
 alter table STUDENT add unique(SNAME)
-alter table STUDENT drop column RANK
-alter table STUDENT modify SNAME varchar(20)
-alter table STUDENT modify SNAME varchar(20)
+
+6
+alter table student drop column RANK
+
+7
+alter table STUDENT alter column SNAME varchar(20)
+
+8
+alter table STUDENT drop constraint PK__STUDENT__47E208FD
+alter table STUDENT alter column SNO varchar(20)
+update STUDENT set SNO='S01' where SNO='1'
+update STUDENT set SNO='S23' where SNO='23'
+update STUDENT set SNO='S34' where SNO='34'
+alter table STUDENT add check(SNO like 'S%')
+
+9
+insert into STUDENT values('S69','Nilesh',19)
+insert into STUDENT values('S90','Srivatsan',23)
+insert into STUDENT values('S89','Riyenth',18)
+insert into STUDENT values('S56','Karthik',25)
+insert into STUDENT values('S70','Chakith',20)
+
+10
+select * into STUDENT1 from STUDENT
+select * from STUDENT
+
+11
+select * into STUDENT2 from STUDENT
+select * from STUDENT1
+
+12
+sp_help STUDENT
+sp_help STUDENT1
+sp_help STUDENT2
+
+13
+update STUDENT set AGE=28 where AGE=16
+alter table STUDENT add check(AGE >= 18)
+
+14
+sp_help STUDENT
+
+15
+alter table STUDENT drop constraint CK__student__AGE__4D65D829
+
+16
+drop table STUDENT
+
+17
+delete from STUDENT where SNAME = 'Karthik'
+
+18
+update STUDENT set AGE = 21 where SNAME = 'Joy'
