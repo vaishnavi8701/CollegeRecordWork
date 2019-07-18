@@ -29,7 +29,7 @@ insert into DEPT_LOCATIONS values(5, 'Sugarland')
 insert into DEPT_LOCATIONS values(5, 'Houston')
 
 --4. Table Name : PROJECT
-create table PROJECT(PINT int primary key, PNAME varchar(10) not null, PLOCATION varchar(10) not null, DNUM int REFERENCES DEPARTMENT(DINT))
+create table PROJECT(PINT int primary key, PNAME varchar(20) not null, PLOCATION varchar(10) not null, DNUM int REFERENCES DEPARTMENT(DINT))
 
 insert into PROJECT values(1,'ProductX','Bellaire',5)
 insert into PROJECT values(2,'ProductY','Sugarland',5)
@@ -74,7 +74,7 @@ insert into DEPENDENT values(123456789,'Elizabeth','F','1967-05-05','SPOUSE')
 create table CLIENT_MASTER(CLIENT_NO varchar(6) primary key check(CLIENT_NO like 'C%'), NAME varchar(10) not null, CITY varchar(10), BAL_DUE numeric(10,2))
 
 insert into CLIENT_MASTER values('C00001','Karthik','Bombay',15000)
-insert into CLIENT_MASTER values('C00002','Karthik','Bombay',15000)
+insert into CLIENT_MASTER values('C00002','Vandana','Madras',0)
 insert into CLIENT_MASTER values('C00003','Pramada','Bombay',50000)
 insert into CLIENT_MASTER values('C00004','Basu','Bombay',0)
 insert into CLIENT_MASTER values('C00005','Ravi','Delhi',20000)
@@ -105,7 +105,7 @@ alter table STUDENT add primary key(SNO)
 alter table STUDENT add unique(SNAME)
 
 6
-alter table student drop column RANK
+alter table STUDENT drop column RANK
 
 7
 alter table STUDENT alter column SNAME varchar(20)
@@ -127,11 +127,11 @@ insert into STUDENT values('S70','Chakith',20)
 
 10
 select * into STUDENT1 from STUDENT
-select * from STUDENT
+select * from STUDENT1
 
 11
 select * into STUDENT2 from STUDENT
-select * from STUDENT1
+select * from STUDENT2
 
 12
 sp_help STUDENT
@@ -149,10 +149,10 @@ sp_help STUDENT
 alter table STUDENT drop constraint CK__student__AGE__4D65D829
 
 16
-drop table STUDENT
+drop table STUDENT1
 
 17
-delete from STUDENT where SNAME = 'Karthik'
+delete from  CLIENT_MASTER where NAME = 'Karthik'
 
 18
 update STUDENT set AGE = 21 where SNAME = 'Joy'
