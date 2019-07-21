@@ -1,0 +1,257 @@
+1
+FNAME      LNAME
+---------- ----------
+John       Smith
+Franklin   Wong
+Joyce      English
+James      Borg
+Ahmad      Jebbar
+
+2
+FNAME      LNAME
+---------- ----------
+
+3
+FNAME      LNAME
+---------- ----------
+John       Smith
+Franklin   Wong
+Joyce      English
+James      Borg
+Jenifer    Wallace
+Ahmad      Jebbar
+Alicia     Zelaya
+
+4
+FNAME      LNAME
+---------- ----------
+Ramesh     Narayan
+
+5
+FNAME      LNAME
+---------- ----------
+John       Smith
+Franklin   Wong
+Ramesh     Narayan
+
+6
+FNAME      LNAME      newSalary
+---------- ---------- -----------
+John       Smith      30500
+Franklin   Wong       40500
+Joyce      English    25500
+Ramesh     Narayan    38500
+James      Borg       55500
+Jenifer    Wallace    43500
+Ahmad      Jebbar     25500
+Alicia     Zelaya     25500
+
+7
+FNAME      LNAME      annualSal
+---------- ---------- -----------
+John       Smith      361000
+Franklin   Wong       481000
+Joyce      English    301000
+Ramesh     Narayan    457000
+James      Borg       661000
+Jenifer    Wallace    517000
+Ahmad      Jebbar     301000
+Alicia     Zelaya     301000
+
+8
+FNAME      LNAME      totalSal
+---------- ---------- -----------
+John       Smith      372000
+Franklin   Wong       492000
+Joyce      English    312000
+Ramesh     Narayan    468000
+James      Borg       672000
+Jenifer    Wallace    528000
+Ahmad      Jebbar     312000
+Alicia     Zelaya     312000
+
+9
+FNAME      LNAME
+---------- ----------
+James      Borg
+
+10
+FNAME      LNAME
+---------- ----------
+Franklin   Wong
+Ramesh     Narayan
+James      Borg
+Jenifer    Wallace
+
+11
+NAME
+----------
+Karthik
+Vandana
+Pramada
+Basu
+Ravi
+Ruk
+
+12
+FNAME      LNAME
+---------- ----------
+John       Smith
+Joyce      English
+Ramesh     Narayan
+James      Borg
+Ahmad      Jebbar
+Alicia     Zelaya
+
+13
+BDATE      ADDRESS
+---------- ----------
+1955-12-08 Houston
+
+14
+SSN         DNAME
+----------- --------------------
+123456789   Headquarters
+333445555   Headquarters
+453453453   Headquarters
+666884444   Headquarters
+888665555   Headquarters
+987654321   Headquarters
+987987987   Headquarters
+999887777   Headquarters
+123456789   Administration
+333445555   Administration
+453453453   Administration
+666884444   Administration
+888665555   Administration
+987654321   Administration
+987987987   Administration
+999887777   Administration
+123456789   Research
+333445555   Research
+453453453   Research
+666884444   Research
+888665555   Research
+987654321   Research
+987987987   Research
+999887777   Research
+
+15
+SSN         FNAME      MINT LNAME      BDATE      ADDRESS    SEX  SALARY      SUPERSSN    DNO         DINT        DNAME                MGRSSN      MGRSTARTDATE
+----------- ---------- ---- ---------- ---------- ---------- ---- ----------- ----------- ----------- ----------- -------------------- ----------- ------------
+123456789   John       B    Smith      1965-01-09 Houston    M    30000       333445555   5           1           Headquarters         888665555   1981-06-19
+333445555   Franklin   T    Wong       1955-12-08 Houston    M    40000       888665555   5           1           Headquarters         888665555   1981-06-19
+453453453   Joyce      A    English    1972-07-31 Houston    F    25000       333445555   5           1           Headquarters         888665555   1981-06-19
+666884444   Ramesh     K    Narayan    1962-09-15 Humble     M    38000       333445555   5           1           Headquarters         888665555   1981-06-19
+888665555   James      E    Borg       1937-11-10 Houston    M    55000       NULL        1           1           Headquarters         888665555   1981-06-19
+987654321   Jenifer    S    Wallace    1941-06-20 Bellaire   F    43000       888665555   4           1           Headquarters         888665555   1981-06-19
+987987987   Ahmad      V    Jebbar     1969-03-29 Houston    M    25000       987654321   4           1           Headquarters         888665555   1981-06-19
+999887777   Alicia     J    Zelaya     1968-07-19 Spring     F    25000       987654321   4           1           Headquarters         888665555   1981-06-19
+123456789   John       B    Smith      1965-01-09 Houston    M    30000       333445555   5           4           Administration       987654321   1995-01-01
+333445555   Franklin   T    Wong       1955-12-08 Houston    M    40000       888665555   5           4           Administration       987654321   1995-01-01
+453453453   Joyce      A    English    1972-07-31 Houston    F    25000       333445555   5           4           Administration       987654321   1995-01-01
+666884444   Ramesh     K    Narayan    1962-09-15 Humble     M    38000       333445555   5           4           Administration       987654321   1995-01-01
+888665555   James      E    Borg       1937-11-10 Houston    M    55000       NULL        1           4           Administration       987654321   1995-01-01
+987654321   Jenifer    S    Wallace    1941-06-20 Bellaire   F    43000       888665555   4           4           Administration       987654321   1995-01-01
+987987987   Ahmad      V    Jebbar     1969-03-29 Houston    M    25000       987654321   4           4           Administration       987654321   1995-01-01
+999887777   Alicia     J    Zelaya     1968-07-19 Spring     F    25000       987654321   4           4           Administration       987654321   1995-01-01
+123456789   John       B    Smith      1965-01-09 Houston    M    30000       333445555   5           5           Research             333445555   1988-05-22
+333445555   Franklin   T    Wong       1955-12-08 Houston    M    40000       888665555   5           5           Research             333445555   1988-05-22
+453453453   Joyce      A    English    1972-07-31 Houston    F    25000       333445555   5           5           Research             333445555   1988-05-22
+666884444   Ramesh     K    Narayan    1962-09-15 Humble     M    38000       333445555   5           5           Research             333445555   1988-05-22
+888665555   James      E    Borg       1937-11-10 Houston    M    55000       NULL        1           5           Research             333445555   1988-05-22
+987654321   Jenifer    S    Wallace    1941-06-20 Bellaire   F    43000       888665555   4           5           Research             333445555   1988-05-22
+987987987   Ahmad      V    Jebbar     1969-03-29 Houston    M    25000       987654321   4           5           Research             333445555   1988-05-22
+999887777   Alicia     J    Zelaya     1968-07-19 Spring     F    25000       987654321   4           5           Research             333445555   1988-05-22
+
+16
+SALARY
+-----------
+25000
+30000
+38000
+40000
+43000
+55000
+
+17
+FullName
+---------------------
+John Smith
+Franklin Wong
+Joyce English
+Ramesh Narayan
+James Borg
+Jenifer Wallace
+Ahmad Jebbar
+Alicia Zelaya
+
+19
+FNAME      LNAME      newSalary
+---------- ---------- -----------
+John       Smith      33000
+Franklin   Wong       44000
+Joyce      English    27500
+Ramesh     Narayan    41800
+
+20
+FNAME      LNAME
+---------- ----------
+John       Smith
+Franklin   Wong
+Joyce      English
+Ramesh     Narayan
+
+21
+FNAME      LNAME
+---------- ----------
+James      Borg
+Jenifer    Wallace
+Franklin   Wong
+
+22
+FNAME      LNAME
+---------- ----------
+John       Smith
+Franklin   Wong
+Joyce      English
+Ramesh     Narayan
+
+
+23
+FNAME      LNAME
+---------- ----------
+James      Borg
+
+24
+ESSN
+-----------
+123456789
+333445555
+333884444
+453453453
+
+25
+FNAME      LNAME      ADDRESS
+---------- ---------- ----------
+Jenifer    Wallace    Bellaire
+Ahmad      Jebbar     Houston
+Alicia     Zelaya     Spring
+
+26
+PINT        DNUM        LNAME      ADDRESS    BDATE
+----------- ----------- ---------- ---------- ----------
+10          4           Wallace    Bellaire   1941-06-20
+30          4           Wallace    Bellaire   1941-06-20
+
+27
+FNAME      LNAME      FNAME      LNAME
+---------- ---------- ---------- ----------
+John       Smith      Franklin   Wong
+Franklin   Wong       James      Borg
+Joyce      English    Franklin   Wong
+Ramesh     Narayan    Franklin   Wong
+Jenifer    Wallace    James      Borg
+Ahmad      Jebbar     Jenifer    Wallace
+Alicia     Zelaya     Jenifer    Wallace
+

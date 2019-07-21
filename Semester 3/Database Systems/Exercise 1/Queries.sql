@@ -1,6 +1,6 @@
 --1. Table Name : EMPLOYEE
 create table EMPLOYEE(SSN int primary key, FNAME varchar(10) not null, MINT varchar(1) not null,
-                      LNAME varchar(10) not null, BDATE datetime not null, ADDRESS varchar(10) not null,
+                      LNAME varchar(10) not null, BDATE date not null, ADDRESS varchar(10) not null,
 		                  SEX varchar(1) not null, SALARY int not null, SUPERSSN int, DNO int not null)
 
 insert into EMPLOYEE values(123456789,'John','B','Smith','09-jan-65','Houston','M',30000,333445555,5)
@@ -13,7 +13,7 @@ insert into EMPLOYEE values(987987987,'Ahmad','V','Jebbar','29-mar-69','Houston'
 insert into EMPLOYEE values(888665555,'James','E','Borg','10-nov-37','Houston','M',55000,NULL,1)
 
 --2. Table Name : DEPARTMENT
-create table DEPARTMENT(DINT int primary key, DNAME varchar(20) not null, MGRSSN int not null, MGRSTARTDATE datetime not null)
+create table DEPARTMENT(DINT int primary key, DNAME varchar(20) not null, MGRSSN int not null, MGRSTARTDATE date not null)
 
 insert into DEPARTMENT values(5,'Research',333445555,'22-may-88')
 insert into DEPARTMENT values(4, 'Administration',987654321,'01-jan-95')

@@ -1,0 +1,158 @@
+1
+Column_name        Type
+----------------------------
+SNO                int
+SNAME              varchar
+AGE                int
+RANK               int
+
+2
+Column_name        Type           Nullable
+------------------------------------------------
+SNO                int            yes
+SNAME              varchar        yes
+AGE                int            no
+RANK               int            yes
+
+3
+constraint_type                  constraint_name                       constraint_keys
+-------------------------------------------------------------------------------------------------
+CHECK on column BAL_DUE          CK__CLIENT_MA__BAL_D__33F4B129        ([BAL_DUE]>=(0))
+CHECK on column CLIENT_NO        CK__CLIENT_MA__CLIEN__320C68B7        ([CLIENT_NO] like 'C%')
+PRIMARY KEY (clustered)          PK__CLIENT_M__1ED5C9BA0430DCC7        CLIENT_NO
+
+4
+constraint_type                  constraint_name                       constraint_keys
+----------------------------------------------------------------------------------------------
+PRIMARY KEY (clustered)          PK__STUDENT__CA1EE06CB6ACB9D9         SNO
+
+5
+constraint_type                constraint_name                         constraint_keys
+-----------------------------------------------------------------------------------------------
+PRIMARY KEY (clustered)        PK__STUDENT__CA1EE06CB6ACB9D9           SNO
+UNIQUE (non-clustered)         UQ__STUDENT__BC5B1B8C5B2C1EF5           SNAME
+
+
+6
+Column_name        Type
+---------------------------
+SNO                int
+SNAME              varchar
+AGE                int
+
+7
+Column_name        Type            Length
+--------------------------------------------------
+SNO                int             4
+SNAME              varchar         20
+AGE                int             4
+
+8
+Column_name        Type           Length
+------------------------------------------
+SNO                varchar        20
+SNAME              varchar        20
+
+constraint_type              constraint_name                  constraint_keys
+-------------------------------------------------------------------------------
+CHECK on column SNO          CK__STUDENT__SNO__36D11DD4       ([SNO] like 'S%')
+
+9
+SNO                  SNAME                AGE
+-------------------- -------------------- -----------
+S01                  Theodore             16
+S23                  Joy                  18
+S34                  Abner                20
+S69                  Nilesh               19
+S90                  Srivatsan            23
+S89                  Riyenth              18
+S56                  Karthik              25
+S70                  Chakith              20
+
+10
+SNO                  SNAME                AGE
+-------------------- -------------------- -----------
+S01                  Theodore             16
+S23                  Joy                  18
+S34                  Abner                20
+S69                  Nilesh               19
+S90                  Srivatsan            23
+S89                  Riyenth              18
+S56                  Karthik              25
+S70                  Chakith              20
+
+11
+SNO                  SNAME                AGE
+-------------------- -------------------- -----------
+S01                  Theodore             16
+S23                  Joy                  18
+S34                  Abner                20
+S69                  Nilesh               19
+S90                  Srivatsan            23
+S89                  Riyenth              18
+S56                  Karthik              25
+S70                  Chakith              20
+
+12
+Column_name                                                                                                                      Type                                                                                                                             Computed                            Length      Prec  Scale Nullable                            TrimTrailingBlanks                  FixedLenNullInSource                Collation
+-------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------- ----------------------------------- ----------- ----- ----- ----------------------------------- ----------------------------------- ----------------------------------- --------------------------------------------------------------------------------------------------------------------------------
+SNO                                                                                                                              varchar                                                                                                                          no                                  20                      yes                                 no                                  no                                  SQL_Latin1_General_CP1_CI_AS
+SNAME                                                                                                                            varchar                                                                                                                          no                                  20                      yes                                 no                                  no                                  SQL_Latin1_General_CP1_CI_AS
+AGE                                                                                                                              int                                                                                                                              no                                  4           10    0     no                                  (n/a)                               (n/a)                               NULL
+
+Column_name                                                                                                                      Type                                                                                                                             Computed                            Length      Prec  Scale Nullable                            TrimTrailingBlanks                  FixedLenNullInSource                Collation
+-------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------- ----------------------------------- ----------- ----- ----- ----------------------------------- ----------------------------------- ----------------------------------- --------------------------------------------------------------------------------------------------------------------------------
+SNO                                                                                                                              varchar                                                                                                                          no                                  20                      yes                                 no                                  no                                  SQL_Latin1_General_CP1_CI_AS
+SNAME                                                                                                                            varchar                                                                                                                          no                                  20                      yes                                 no                                  no                                  SQL_Latin1_General_CP1_CI_AS
+AGE                                                                                                                              int                                                                                                                              no                                  4           10    0     no                                  (n/a)                               (n/a)                               NULL
+
+Column_name                                                                                                                      Type                                                                                                                             Computed                            Length      Prec  Scale Nullable                            TrimTrailingBlanks                  FixedLenNullInSource                Collation
+-------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------- ----------------------------------- ----------- ----- ----- ----------------------------------- ----------------------------------- ----------------------------------- --------------------------------------------------------------------------------------------------------------------------------
+SNO                                                                                                                              varchar                                                                                                                          no                                  20                      yes                                 no                                  no                                  SQL_Latin1_General_CP1_CI_AS
+SNAME                                                                                                                            varchar                                                                                                                          no                                  20                      yes                                 no                                  no                                  SQL_Latin1_General_CP1_CI_AS
+AGE                                                                                                                              int                                                                                                                              no                                  4           10    0     no                                  (n/a)                               (n/a)                               NULL
+
+13
+constraint_type              constraint_name                  constraint_keys
+----------------------------------------------------------------------------------
+CHECK on column SNO          CK__STUDENT__SNO__36D11DD4       ([SNO] like 'S%')
+UNIQUE (non-clustered)       UQ__STUDENT__BC5B1B8C5B2C1EF5    SNAME
+CHECK on column AGE          agecons                          ([AGE]>=(18))
+
+14
+Column_name        Type
+------------------------------
+SNO                varchar
+SNAME              varchar
+AGE                int
+
+15
+constraint_type                constraint_name                   constraint_keys
+---------------------------------------------------------------------------------------
+CHECK on column SNO            CK__STUDENT__SNO__36D11DD4        ([SNO] like 'S%')
+UNIQUE (non-clustered)         UQ__STUDENT__BC5B1B8C5B2C1EF5     SNAME
+
+
+16
+The object 'STUDENT1' does not exist in database 'master' or is invalid for this operation.
+
+17
+CLIENT_NO NAME       CITY       BAL_DUE
+--------- ---------- ---------- ---------------------------------------
+C00002	  Vandana    Madras	0.00
+C00003    Pramada    Bombay     50000.00
+C00004    Basu       Bombay     0.00
+C00005    Ravi       Delhi      20000.00
+C00006    Ruk        Bombay     0.00
+
+
+18
+SNO                  SNAME                AGE
+-------------------- -------------------- -----------
+S01                  Theodore             28
+S23                  Joy                  21
+S34                  Abner                20
+S69                  Nilesh               19
+S90                  Srivatsan            23
+S89                  Riyenth              18
+S70                  Chakith              20
