@@ -49,6 +49,9 @@ select distinct SALARY from EMPLOYEE
 17
 select FNAME + ' ' + LNAME as 'FullName' from EMPLOYEE
 
+18
+select FNAME, LNAME from EMPLOYEE order by FNAME desc
+
 19
 select FNAME, LNAME, (SALARY + (SALARY/10)) as 'newSalary' from EMPLOYEE where DNO = (select DNUM from PROJECT where PNAME = 'ProductY')
 

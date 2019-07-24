@@ -1,4 +1,5 @@
 1
+
 FNAME      LNAME
 ---------- ----------
 John       Smith
@@ -8,10 +9,12 @@ James      Borg
 Ahmad      Jebbar
 
 2
+
 FNAME      LNAME
 ---------- ----------
 
 3
+
 FNAME      LNAME
 ---------- ----------
 John       Smith
@@ -23,11 +26,13 @@ Ahmad      Jebbar
 Alicia     Zelaya
 
 4
+
 FNAME      LNAME
 ---------- ----------
 Ramesh     Narayan
 
 5
+
 FNAME      LNAME
 ---------- ----------
 John       Smith
@@ -35,6 +40,7 @@ Franklin   Wong
 Ramesh     Narayan
 
 6
+
 FNAME      LNAME      newSalary
 ---------- ---------- -----------
 John       Smith      30500
@@ -47,6 +53,7 @@ Ahmad      Jebbar     25500
 Alicia     Zelaya     25500
 
 7
+
 FNAME      LNAME      annualSal
 ---------- ---------- -----------
 John       Smith      361000
@@ -59,6 +66,7 @@ Ahmad      Jebbar     301000
 Alicia     Zelaya     301000
 
 8
+
 FNAME      LNAME      totalSal
 ---------- ---------- -----------
 John       Smith      372000
@@ -71,11 +79,13 @@ Ahmad      Jebbar     312000
 Alicia     Zelaya     312000
 
 9
+
 FNAME      LNAME
 ---------- ----------
 James      Borg
 
 10
+
 FNAME      LNAME
 ---------- ----------
 Franklin   Wong
@@ -186,6 +196,18 @@ Jenifer Wallace
 Ahmad Jebbar
 Alicia Zelaya
 
+18
+FNAME      LNAME
+---------- ----------
+Ramesh     Narayan
+Joyce      English
+John       Smith
+Jenifer    Wallace
+James      Borg
+Franklin   Wong
+Alicia     Zelaya
+Ahmad      Jebbar
+
 19
 FNAME      LNAME      newSalary
 ---------- ---------- -----------
@@ -254,4 +276,3 @@ Ramesh     Narayan    Franklin   Wong
 Jenifer    Wallace    James      Borg
 Ahmad      Jebbar     Jenifer    Wallace
 Alicia     Zelaya     Jenifer    Wallace
-
