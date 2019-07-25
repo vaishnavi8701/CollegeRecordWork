@@ -34,7 +34,7 @@ void peek()
         printf("\nStack is empty. No element is present at the top.\n");
         return ;
     }
-    printf("\n%d at the top of the stack.\n", Stack[Top]);
+    printf("\n%d is at the top of the stack.\n", Stack[Top]);
 }
 
 void displayStack()
