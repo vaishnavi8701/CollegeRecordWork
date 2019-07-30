@@ -74,7 +74,7 @@ select distinct ESSN from WORKS_ON where PNO in(1,2,3)
 select FNAME, LNAME, ADDRESS from EMPLOYEE where DNO = (select DINT from DEPARTMENT where DNAME = 'Administration')
 
 26
-select P.PINT, P.DNUM, E.LNAME, E.ADDRESS, E.BDATE from PROJECT P, EMPLOYEE E, DEPARTMENT D where P.DNUM=E.DNO AND D.MGRSSN = E.SSN and P.PLOCATION = 'Stafford';
+select P.PINT, P.DNUM, E.LNAME, E.ADDRESS, E.BDATE from PROJECT P, EMPLOYEE E, DEPARTMENT D where P.DNUM=E.DNO and D.MGRSSN = E.SSN and P.PLOCATION = 'Stafford';
 
 27
 select E.FNAME, E.LNAME, S.FNAME, S.LNAME from EMPLOYEE E, EMPLOYEE S where E.SUPERSSN = S.SSN
