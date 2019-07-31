@@ -1,0 +1,155 @@
+1
+
+FNAME      LNAME      DNAME                PNAME
+---------- ---------- -------------------- --------------------
+John       Smith      Research             ProductX
+John       Smith      Research             ProductY
+Franklin   Wong       Research             ProductY
+Franklin   Wong       Research             ProductZ
+Franklin   Wong       Research             Computerization
+Franklin   Wong       Research             Reorganization
+Joyce      English    Research             ProductX
+Joyce      English    Research             ProductY
+James      Borg       Headquarters         Reorganization
+Jenifer    Wallace    Administration       Reorganization
+Jenifer    Wallace    Administration       NewBenefits
+Ahmad      Jebbar     Administration       Computerization
+Ahmad      Jebbar     Administration       NewBenefits
+Alicia     Zelaya     Administration       Computerization
+Alicia     Zelaya     Administration       NewBenefits
+
+2
+
+DNO
+----------- ----------- -----------
+1           1           55000
+4           3           31000
+5           4           33250
+
+3
+
+PINT        PNAME
+----------- -------------------- -----------
+1           ProductX             2
+2           ProductY             3
+3           ProductZ             2
+10          Computerization      3
+20          Reorganization       3
+30          NewBenefits          3
+
+4
+
+PINT        PNAME
+----------- -------------------- -----------
+1           ProductX             2
+2           ProductY             3
+3           ProductZ             1
+10          Computerization      1
+20          Reorganization       1
+
+5
+
+----------- ----------- ----------- -----------
+281000      55000       25000       35125
+
+6
+
+----------- ----------- ----------- -----------
+133000      40000       25000       33250
+
+7
+
+-----------
+6
+
+8
+
+-----------
+8
+
+9
+
+DNAME
+-------------------- -----------
+Administration       3
+Headquarters         1
+Research             4
+
+10
+
+PINT
+-----------
+1
+2
+
+12
+
+FNAME      LNAME
+---------- ----------
+James      Borg
+Jenifer    Wallace
+
+13
+
+-----------
+4
+
+14
+
+PINT        PNAME
+----------- -------------------- -----------
+2           ProductY             3
+10          Computerization      3
+20          Reorganization       3
+30          NewBenefits          3
+
+15
+
+FNAME      LNAME
+---------- ----------
+John       Smith
+Franklin   Wong
+
+16
+
+FNAME      LNAME
+---------- ----------
+Jenifer    Wallace
+Ahmad      Jebbar
+Alicia     Zelaya
+
+18
+
+FNAME      LNAME
+---------- ----------
+Joyce      English
+Ramesh     Narayan
+James      Borg
+Ahmad      Jebbar
+Alicia     Zelaya
+
+19
+
+DNO         FNAME      LNAME      SALARY
+----------- ---------- ---------- -----------
+5           Franklin   Wong       40000
+1           James      Borg       55000
+4           Jenifer    Wallace    43000
+
+20
+
+FNAME      LNAME      SALARY
+---------- ---------- -----------
+Jenifer    Wallace    43000
+Franklin   Wong       40000
+Ramesh     Narayan    38000
+
+21
+
+FNAME      LNAME
+---------- ----------
+John       Smith
+Joyce      English
+Ramesh     Narayan
+Ahmad      Jebbar
+Alicia     Zelaya

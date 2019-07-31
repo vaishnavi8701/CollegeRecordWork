@@ -59,7 +59,7 @@ insert into WORKS_ON values(987654321,20,15.0)
 insert into WORKS_ON values(888665555,20,NULL)
 
 --6. Table Name : DEPENDENT
-create table DEPENDENT(ESSN int, DEPENDENT_NAME varchar(10), SEX varchar(10) not null, BDATE datetime, RELATIONSHIP varchar(10) not null,
+create table DEPENDENT(ESSN int, DEPENDENT_NAME varchar(10), SEX varchar(10) not null, BDATE date, RELATIONSHIP varchar(10) not null,
 		                   primary key(ESSN, DEPENDENT_NAME))
 
 insert into DEPENDENT values(333445555,'Alice','F','1966-04-05','DAUGHTER')

@@ -2,7 +2,7 @@
 select FNAME, LNAME from EMPLOYEE where ADDRESS like '%ton%'
 
 2
-select FNAME, LNAME from EMPLOYEE where BDATE like '%50'
+select FNAME, LNAME from EMPLOYEE where BDATE like '%50%'
 
 3
 select FNAME, LNAME from EMPLOYEE where FNAME like '[afj]%'
