@@ -6,6 +6,12 @@ struct Node
     struct Node *Next;
 }*Head, *Temp, *n;
 
+void createList(int Value)
+{
+    Head = (struct Node*)malloc(sizeof(struct Node));
+    Head -> Data = Value;
+}
+
 void insertAtBeg(int Value)
 {
     Node *Temp = (struct Node*)malloc(sizeof(struct Node));
@@ -112,52 +118,50 @@ void displayList()
 void Menu()
 {
     int Choice = 0;
-    while(Choice != 9)
+    while(Choice != 8)
     {
         printf("\nEnter Any One Of The Following Choices:-"
-               "\n1. Create a linked list"
-               "\n2. Insert at the beginning"
-               "\n3. Insert at the end"
-               "\n4. Insert at a given position"
-               "\n5. Delete by value"
-               "\n6. Delete by position"
-               "\n7. Check if an element is present"
-               "\n8. Display the list"
-               "\n9. Exit"
+               "\n1. Insert at the beginning"
+               "\n2. Insert at the end"
+               "\n3. Insert at a given position"
+               "\n4. Delete by value"
+               "\n5. Delete by position"
+               "\n6. Check if an element is present"
+               "\n7. Display the list"
+               "\n8. Exit"
                "\nYour choice is : ")
         scanf("%d", &Choice);
         switch(Choice)
         {
-            case 1 : break;
-
-            case 2 : insertAtBeg(Value);
+            case 1 : insertAtBeg(Value);
                       break;
 
-            case 3 : insertAtEnd(Value);
+            case 2 : insertAtEnd(Value);
                       break;
 
-            case 4 : insertAtPos(Pos, Value);
+            case 3 : insertAtPos(Pos, Value);
                       break;
 
-            case 5 : deleteByValue(Value);
+            case 4 : deleteByValue(Value);
                       break;
 
-            case 6 : deleteByPos(Pos, Value);
+            case 5 : deleteByPos(Pos, Value);
                       break;
 
-            case 7 : findElement(Value);
+            case 6 : findElement(Value);
                       break;
 
-            case 8 : displayList();
+            case 7 : displayList();
                       break;
 
-            case 9 : break;
+            case 8 : break;
         }
     }
 }
 
 int main(void)
 {
+    createList(Value);
     Menu();
     return 0;
 }
