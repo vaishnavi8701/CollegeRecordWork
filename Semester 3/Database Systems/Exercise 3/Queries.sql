@@ -56,3 +56,6 @@ select FNAME, LNAME, SALARY from EMPLOYEE E1  where SALARY > (select AVG(SALARY)
 
 21
 select FNAME, LNAME from EMPLOYEE where NOT EXISTS(select * from DEPARTMENT where SSN = MGRSSN)
+
+22
+select FNAME, LNAME from EMPLOYEE where SALARY < (select min(SALARY) from EMPLOYEE where DNO = 5)
