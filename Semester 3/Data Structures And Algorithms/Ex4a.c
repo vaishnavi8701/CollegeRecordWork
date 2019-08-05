@@ -137,7 +137,10 @@ void delByPos(int Pos)
   }
 
   n -> Prev -> Next = n -> Next;
-  n -> Next -> Prev = n -> Prev;
+  if(n -> Next != NULL)
+  {
+    n -> Next -> Prev = n -> Prev;
+  }
   printf("Element has been deleted from position %d\n", Pos);
   free(n);
 }
