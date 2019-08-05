@@ -1,4 +1,5 @@
 # include <stdio.h>
+# include <stdlib.h>
 
 struct Node
 {
@@ -14,7 +15,7 @@ void createList(int Value)
 
 void insertAtBeg(int Value)
 {
-    Node *Temp = (struct Node*)malloc(sizeof(struct Node));
+    Temp = (struct Node*)malloc(sizeof(struct Node));
     Temp -> Data = Value;
     Temp -> Next = Head;
     Head = Temp;
@@ -22,7 +23,7 @@ void insertAtBeg(int Value)
 
 void insertAtEnd(int Value)
 {
-    Node *Temp = (struct Node*)malloc(sizeof(struct Node));
+    Temp = (struct Node*)malloc(sizeof(struct Node));
     Temp -> Data = Value;
     n = Head;
     while(n -> Next != NULL)
@@ -34,7 +35,7 @@ void insertAtEnd(int Value)
 
 void insertAtPos(int Pos, int Value)
 {
-    Node *Temp = (struct Node*)malloc(sizeof(struct Node));
+    Temp = (struct Node*)malloc(sizeof(struct Node));
     Temp -> Data = Value;
     n = Head;
     for(int i = 1 ; i < Pos - 1 ; i++)
@@ -84,8 +85,8 @@ void deleteByPos(int Pos)
         return ;
     }
 
-    Node *delPtr = n -> Next;
-    n -> Next = del -> Next;
+    struct Node *delPtr = n -> Next;
+    n -> Next = delPtr -> Next;
     free(delPtr);
 }
 
@@ -129,7 +130,7 @@ void Menu()
                "\n6. Check if an element is present"
                "\n7. Display the list"
                "\n8. Exit"
-               "\nYour choice is : ")
+               "\nYour choice is : ");
         scanf("%d", &Choice);
         switch(Choice)
         {
