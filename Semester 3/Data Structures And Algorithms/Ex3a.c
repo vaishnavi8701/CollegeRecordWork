@@ -5,12 +5,13 @@ struct Node
 {
     int Data;
     struct Node *Next;
-}*Head, *Temp, *n;
+}*Head, *Temp, *Prev, *n;
 
 void createList(int Value)
 {
     Head = (struct Node*)malloc(sizeof(struct Node));
     Head -> Data = Value;
+    printf("%d has been inserted as head node.\n", Value);
 }
 
 void insertAtBeg(int Value)
@@ -19,6 +20,7 @@ void insertAtBeg(int Value)
     Temp -> Data = Value;
     Temp -> Next = Head;
     Head = Temp;
+    printf("%d has been inserted into the list.\n", Value);
 }
 
 void insertAtEnd(int Value)
@@ -31,6 +33,7 @@ void insertAtEnd(int Value)
         n = n -> Next;
     }
     n -> Next = Temp;
+    printf("%d has been inserted into the list.\n", Value);
 }
 
 void insertAtPos(int Pos, int Value)
@@ -38,17 +41,19 @@ void insertAtPos(int Pos, int Value)
     Temp = (struct Node*)malloc(sizeof(struct Node));
     Temp -> Data = Value;
     n = Head;
-    for(int i = 1 ; i < Pos - 1 ; i++)
+    int i;
+    for(i = 1 ; i < Pos - 1 ; i++)
     {
         n = n -> Next;
     }
     Temp -> Next = n -> Next;
     n -> Next = Temp;
+    printf("%d has been inserted into the list.\n", Value);
 }
 
-void deleteByData(int Value)
+void deleteByValue(int Value)
 {
-    struct Node *Prev = NULL;
+    Prev = NULL;
     n = Head;
     while(n != NULL && n -> Data != Value)
     {
@@ -61,6 +66,7 @@ void deleteByData(int Value)
         return ;
     }
     Prev -> Next = n -> Next;
+    printf("%d has been deleted from the list.\n", Value);
     free(n);
 }
 
@@ -70,23 +76,29 @@ void deleteByPos(int Pos)
     if(Pos == 1)
     {
         Head = n -> Next;
+        printf("Element at position %d has been deleted from the list.\n");
         free(n);
         return ;
     }
 
-    for(int i = 1 ; n != NULL && i < Pos - 1 ; i++)
+    int i;
+    for(i = 1 ; n != NULL && i < Pos - 1 ; i++)
     {
         n = n -> Next;
     }
 
     if(n == NULL || n -> Next == NULL)
     {
-        printf("\nPosition exceeds capacity of the linked list.");
+        printf("Position exceeds capacity of the linked list.\n");
         return ;
     }
 
     struct Node *delPtr = n -> Next;
     n -> Next = delPtr -> Next;
+<<<<<<< HEAD
+=======
+    printf("Element at position %d has been deleted from the list.\n", Pos);
+>>>>>>> c43fec2cbf69075a24875b16bce12268bd215881
     free(delPtr);
 }
 
@@ -99,10 +111,10 @@ void findElement(int Value)
     }
     if(n == NULL)
     {
-        printf("\nElement not found in the list.");
+        printf("Element not found in the list.\n");
         return ;
     }
-    printf("\nElement is present in the list.");
+    printf("Element is present in the list.\n");
 }
 
 void displayList()
@@ -111,9 +123,10 @@ void displayList()
     printf("\nThe elements of the list are : ");
     while(n != NULL)
     {
-        printf("%d " n -> Data);
+        printf("%d ", n -> Data);
         n = n -> Next;
     }
+    printf("\n");
 }
 
 void Menu()
@@ -132,37 +145,55 @@ void Menu()
                "\n8. Exit"
                "\nYour choice is : ");
         scanf("%d", &Choice);
+        int Pos, Value;
         switch(Choice)
         {
-            case 1 : insertAtBeg(Value);
+            case 1 : printf("\nEnter value for insertion : ");
+                     scanf("%d", &Value);
+                     insertAtBeg(Value);
                       break;
 
-            case 2 : insertAtEnd(Value);
+            case 2 : printf("\nEnter value for insertion : ");
+                     scanf("%d", &Value);
+                     insertAtEnd(Value);
                       break;
 
-            case 3 : insertAtPos(Pos, Value);
+            case 3 : printf("\nEnter value and position for insertion : ");
+                     scanf("%d %d", &Value, &Pos);
+                     insertAtPos(Pos, Value);
                       break;
 
-            case 4 : deleteByValue(Value);
+            case 4 : printf("\nEnter value for deletion : ");
+                     scanf("%d", &Value);
+                     deleteByValue(Value);
                       break;
 
-            case 5 : deleteByPos(Pos, Value);
+            case 5 : printf("\nEnter position for deletion : ");
+                     scanf("%d", &Pos);
+                     deleteByPos(Pos);
                       break;
 
-            case 6 : findElement(Value);
+            case 6 : printf("\nEnter value for search operation : ");
+                     scanf("%d", &Value);
+                     findElement(Value);
                       break;
 
             case 7 : displayList();
                       break;
 
             case 8 : break;
+
+            default : printf("\nInvalid choice.\n");
         }
     }
 }
 
 int main(void)
 {
-    createList(Value);
+    int Num;
+    printf("\nEnter data to be inserted at head : ");
+    scanf("%d", &Num);
+    createList(Num);
     Menu();
     return 0;
 }
