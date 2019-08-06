@@ -95,10 +95,7 @@ void deleteByPos(int Pos)
 
     struct Node *delPtr = n -> Next;
     n -> Next = delPtr -> Next;
-<<<<<<< HEAD
-=======
     printf("Element at position %d has been deleted from the list.\n", Pos);
->>>>>>> c43fec2cbf69075a24875b16bce12268bd215881
     free(delPtr);
 }
 
