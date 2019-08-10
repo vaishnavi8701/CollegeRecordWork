@@ -104,16 +104,9 @@ void delByVal(int x)
     return ;
   }
 
-  if(n -> Next == NULL)
-  {
-    n -> Prev -> Next = n -> Next;
-    printf("%d has been deleted from the list.\n", x);
-    free(n);
-    return ;
-  }
-
   n -> Prev -> Next = n -> Next;
-  n -> Next -> Prev = n -> Prev;
+  if(n -> Next != NULL)
+    n -> Next -> Prev = n -> Prev;
   printf("%d has been deleted from the list.\n", x);
   free(n);
 }
