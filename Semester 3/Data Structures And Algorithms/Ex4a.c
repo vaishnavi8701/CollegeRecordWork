@@ -41,7 +41,7 @@ void insertAtEnd(int x)
   Temp -> Prev = n;
   printf("%d has been inserted into the list.\n", x);
 }
-                                           
+
 void insertAtPos(int Pos, int x)
 {
    Temp = (struct Node*)malloc(sizeof(struct Node));
@@ -231,5 +231,3 @@ int main(void)
   Menu();
   return 0;
 }
-                           
-                                                  
