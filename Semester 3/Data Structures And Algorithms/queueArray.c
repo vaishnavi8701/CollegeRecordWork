@@ -8,20 +8,20 @@ void enqueueElement(int Val)
 {
   if(Rear == SIZE)
   {
-     printf("Queue is full. Insertion not possible.\n");
+     printf("Queue is full. Enqueue not possible\n");
      return ;
   }
 
   Queue[Rear] = Val;
   Rear++;
-  printf("%d has been inserted into the queue.\n", Val);
+  printf("%d has been enqueued.\n", Val);
 }
 
 void dequeueElement()
 {
   if(Front == Rear)
   {
-     printf("\nQueue is empty. Deletion not possible.\n");
+     printf("\nQueue is Empty. Dequeue operation cannot be performed.\n");
      return ;
   }
 
