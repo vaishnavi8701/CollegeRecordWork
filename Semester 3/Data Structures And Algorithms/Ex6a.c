@@ -30,7 +30,7 @@ void Q_Insert(int x)
 
 void Q_Delete()
 {
-    if(Front == -1) //Check if the queue is initially empty.
+    if(Front == -1)
     {
         printf("\nDeletion not possible. Queue is empty.\n");
         return ;
@@ -96,8 +96,8 @@ void Menu()
              "\n4. Exit"
              "\nYour choice is : ");
       scanf("%d", &Choice);
-        switch(Choice)
-        {
+      switch(Choice)
+      {
             case 1 : {
                      int x;
                      printf("\nEnter the element to be enqueued : ");
