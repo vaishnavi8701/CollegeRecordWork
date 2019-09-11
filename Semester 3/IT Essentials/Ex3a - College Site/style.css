@@ -1,0 +1,92 @@
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #ccc;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+header .container .banner img{
+   width: 980px;
+   height: 148px;
+   margin-bottom: -4px;
+}
+
+#navbar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background: rgb(75, 147, 255);
+    border-radius: 6px;
+}
+
+#navbar ul li a {
+    color: #fff;
+    font-size: 18px;
+}
+
+#navbar ul li {
+    padding: 10px 8px;
+}
+
+#navbar ul li:hover {
+    background: lightblue;
+}
+
+#showcase .container {
+    display: flex;
+    background: #fff;
+    padding: 20px;
+}
+
+#showcase .container .clg-img{
+    width: 897px;
+    height: 180px;
+    overflow: hidden;
+    box-shadow: 0 0 15px 2px #333;
+    border-radius: 10px;
+    margin: 0 60px 10px 20px;
+}
+
+#showcase .container .resources-tab h2{
+    background: lightgreen;
+    text-align: center;
+    padding: 2px;
+    font-size: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#showcase .container .resources-tab img{
+    height: 60px;
+}
+
+#showcase .container .resources-tab {
+    background-color: #ccc;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+#showcase .container .resources-tab ul li{
+    list-style: none;
+    margin: 10px 0;
+    text-align: center;
+    background-color: beige;
+    padding: 2px;
+}
+
+#showcase .container .resources-tab ul li a {
+    color: #000;
+}
+
+#showcase .container .resources-tab ul li:hover {
+    background-color: grey;
+}
