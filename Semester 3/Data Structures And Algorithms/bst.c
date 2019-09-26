@@ -1,45 +1,63 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-struct BSTNode
+struct BstNode
 {
-  int Data;
-  struct BSTNode *Left, *Right;
+    int Data;
+    struct BstNode *Left, *Right;
 };
 
 
-struct BSTNode *newNode(int x)
+struct BstNode* newNode(int Data)
 {
-  struct BSTNode *Temp = (struct BSTNode*)malloc(sizeof(struct BSTNode));
-  Temp -> Data = x;
-  Temp -> Left -> Right = NULL;
-  return Temp;
+    struct BstNode *newNode = (struct BstNode*)malloc(sizeof(struct BstNode)); //Memory allocation for new node.
+    newNode -> Data = Data;
+    newNode -> Left = newNode -> Right = NULL;
+    return newNode;
 }
 
-struct BSTNode *insertNode(struct BSTNode *Root, int x)
+struct BstNode* insertNewNode(struct BstNode* Root, int Data)
 {
-  if(Root == NULL)
-   newNode(x);
+    if(Root == NULL) //If the tree or subtree has no elements
+      return newNode(Data);
 
-  if(Root -> Data >= x)
-   Root -> Left = insertNode(Root -> Left, x);
-  else
-   Root -> Right = insertNode(Root -> Right, x);
-
-  return Root;
+    if(Root -> Data >= Data) //If data stored in the root node is greater than the data to be inserted, make sure to insert the new node in the left subtree.
+    {
+        Root -> Left = insertNewNode(Root -> Left, Data);
+    }
+    else //Else, just insert it into the right subtree.
+    {
+        Root -> Right = insertNewNode(Root -> Right, Data);
+    }
+    return Root; //Return address of the root node every time a new node is inserted in the tree..
 }
 
-void inorderTraversal(struct BSTNode *Root)
+int searchElement(struct BstNode* Root, int Data)
 {
-  if(Root == NULL)
-    return ;
+    if(Root == NULL)
+      return 0;
 
-  inorderTraversal(Root -> Left);
-  printf("%d ", Root -> Data);
-  inorderTraversal(Root -> Right);
+    else if(Root -> Data == Data)
+      return 1;
+
+    else if(Root -> Data >= Data) //If data stored in root node is greater than the data to be searched, then continue to search in the left subtree.
+      return searchElement(Root -> Left, Data);
+
+    else //Else, search in the right subtree.
+      return searchElement(Root -> Right, Data);
 }
 
-void preorderTraversal(struct BSTNode *Root)
+void inorderTraversal(struct BstNode* Root)
+{
+    if(Root == NULL)
+      return ;
+
+    inorderTraversal(Root -> Left);
+    printf("%d ", Root -> Data);
+    inorderTraversal(Root -> Right);
+}
+
+void preorderTraversal(struct BstNode *Root)
 {
   if(Root == NULL)
     return ;
@@ -49,19 +67,24 @@ void preorderTraversal(struct BSTNode *Root)
   preorderTraversal(Root -> Right);
 }
 
-void postorderTraversal(struct BSTNode *Root)
+void postorderTraversal(struct BstNode *Root)
 {
   if(Root == NULL)
     return;
 
   postorderTraversal(Root -> Left);
   postorderTraversal(Root-> Right);
-  printf(" %d", Root -> Data);
+  printf("%d ", Root -> Data);
 }
 
 void Menu()
 {
-  int Choice;
+  struct BstNode *Root = NULL;
+  int Num;
+  printf("\nEnter data to be inserted at root Node : ");
+  scanf("%d", &Num);
+  Root = insertNewNode(Root, Num);
+  int Choice = 0, x;
   while(Choice != 6)
   {
    printf("\nChoose Any One Of The Following Choices:-"
@@ -73,38 +96,45 @@ void Menu()
           "\n6. Exit"
           "\nYour choice is : ");
    scanf("%d", &Choice);
+   switch(Choice)
+   {
+      case 1 : printf("\nEnter the element to be inserted into the BST : ");
+               scanf("%d", &x);
+               Root = insertNewNode(Root, x);
+                break;
+
+      case 2 : printf("\nEnter the element to be searched : ");
+               scanf("%d", &x);
+               if(searchElement(Root, x) == 1)
+                  printf("Element present in the BST.\n");
+               else
+                  printf("Element not present in the BST.\n");
+                break;
+
+      case 3 : printf("\nInorder Traversal of the BST : ");
+               inorderTraversal(Root);
+               printf("\n");
+                break;
+
+      case 4 : printf("\nPreorder Traversal of the BST : ");
+               preorderTraversal(Root);
+               printf("\n");
+                break;
+
+      case 5 : printf("\nPostorder Traversal of the BST : ");
+               postorderTraversal(Root);
+               printf("\n");
+                break;
+
+      case 6 : break;
+
+      default : printf("\nInvalid Choice.\n");
+    }
   }
 }
 
 int main(void)
 {
-  struct BSTNode *Root = NULL;
-  Root = insertNode(Root, 50);
-  Root = insertNode(Root, 40);
-  Root = insertNode(Root, 60);
-  Root = insertNode(Root, 30);
-  Root = insertNode(Root, 45);
-  Root = insertNode(Root, 70);
-  Root = insertNode(Root, 55);
-  printf("%d", searchElement(Root, 30));
-  printf("\nInorder Traversal : ");
-  inorderTraversal(Root)
-  printf("\nPreorder Traversal : ");
-  preorderTraversal(Root);
-  printf("\nPostorder Traversal : ");
-  postorderTraversal(Root);
-  return 0;
+    Menu();
+    return 0;
 }
-
-int searchElement(struct BSTNode *Root, int x)
-{
-  if(Root == NULL)
-   return 0;
-  else if(Root -> Data == x)
-   return 1;
-  else if(Root -> Data > x)
-   searchElement(Root -> Left, x);
-  else
-   searchElement(Root -> Right, x);
-}
-
