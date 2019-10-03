@@ -96,6 +96,7 @@ Node* insertNode(Node *Root, int x)
   else if(x < Root -> Data)
   {
     Root -> Left = insertNode(Root -> Left, x);
+
     if(balanceFactor(Root) == 2)
     {
       if(x < Root -> Left -> Data)
@@ -108,6 +109,7 @@ Node* insertNode(Node *Root, int x)
   else
   {
     Root -> Right = insertNode(Root -> Right, x);
+
     if(balanceFactor(Root) == -2)
     {
       if(x > Root -> Right -> Data)
@@ -164,6 +166,7 @@ Node *deleteNode(Node *Root, int x)
         p = p -> Left;
       Root -> Data = p -> Data;
       Root -> Right= deleteNode(Root -> Right, p -> Data);
+
       if(balanceFactor(Root) == 2)
       {
         if(balanceFactor(Root -> Left)>=0)
