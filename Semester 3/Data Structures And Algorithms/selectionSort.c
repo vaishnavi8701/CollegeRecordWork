@@ -13,10 +13,10 @@ void selectionSort(int Arr[], int n)
       {
         iMin = j;
       }
+    }
       int Temp = Arr[i];
       Arr[i] = Arr[iMin];
       Arr[iMin] = Temp;
-    }
   }
 }
 
