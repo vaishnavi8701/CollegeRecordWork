@@ -3,10 +3,11 @@
 void selectionSort(int Arr[], int n)
 {
   int i, j, iMin;
+
   for(i = 0 ; i < n - 1 ; i++)
   {
     iMin = i;
-    for(int j = i + 1 ; j < n ; j++)
+    for(j = i + 1 ; j < n ; j++)
     {
       if(Arr[j] < Arr[iMin])
       {
@@ -21,8 +22,13 @@ void selectionSort(int Arr[], int n)
 
 int main(void)
 {
-    int Arr[] = {9, 7, 4, 3, 1};
-    int n = sizeof(Arr) / sizeof(Arr[0]), i;
+    int Arr[100], n, i;
+    printf("\nEnter the size of the array : ");
+    scanf("%d", &n);
+    printf("Enter the elements of the array : ");
+    for(i = 0 ; i < n ; i++)
+     scanf("%d", &Arr[i]);
+
     printf("\nInitial Array : ");
     for(i = 0 ; i < n ; i++)
       printf("%d ", Arr[i]);
@@ -30,10 +36,6 @@ int main(void)
     printf("\nSorted Array : ");
     for(i = 0 ; i < n ; i++)
       printf("%d ", Arr[i]);
+    printf("\n");
     return 0;
 }
-
-/*
-Initial Array : 9 7 4 3 1
-Sorted Array : 1 3 4 7 9
-*/
