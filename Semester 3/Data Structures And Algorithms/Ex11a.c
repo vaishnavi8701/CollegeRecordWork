@@ -1,4 +1,4 @@
-#include<stdio.h>
+# include <stdio.h>
 
 void allSourceShortestPath(int n, int Graph[][10], int Dist[][10])
 {

@@ -1,90 +1,192 @@
 # include <stdio.h>
-# define SIZE 5
+# include <stdlib.h>
 
-int Stack[SIZE];
-int Top = -1;
-
-void pushData(int x)
+struct Node
 {
-    if(Top == SIZE - 1)
-    {
-        printf("Stack is full. Push operation is not possible.\n");
-        return ;
-    }
-    Top++;
-    Stack[Top] = x;
-    printf("%d has been pushed into the stack.\n", Stack[Top]);
+    int Data;
+    struct Node *Next;
+}*Head, *Temp, *Prev, *n;
+
+void createList(int Val)
+{
+    Head = (struct Node*)malloc(sizeof(struct Node));
+    Head -> Data = Val;
+    Head -> Next = NULL;
+    printf("%d has been inserted as head node.\n", Val);
 }
 
-void popData()
+void insertAtBeg(int Val)
 {
-    if(Top == -1)
-    {
-        printf("\nStack is empty. No elements to pop.\n");
-        return ;
-    }
-    printf("\n%d has been popped.\n", Stack[Top]);
-    Top--;
+    Temp = (struct Node*)malloc(sizeof(struct Node));
+    Temp -> Data = Val;
+    Temp -> Next = Head;
+    Head = Temp;
+    printf("%d has been inserted into the list.\n", Val);
 }
 
-void peek()
+void insertAtEnd(int Val)
 {
-    if(Top == -1)
+    Temp = (struct Node*)malloc(sizeof(struct Node));
+    Temp -> Data = Val;
+    Temp -> Next = NULL;
+    n = Head;
+    while(n -> Next != NULL)
     {
-        printf("\nStack is empty. No element is present at the top.\n");
-        return ;
+        n = n -> Next;
     }
-    printf("\n%d is at the top of the stack.\n", Stack[Top]);
+    n -> Next = Temp;
+    printf("%d has been inserted into the list.\n", Val);
 }
 
-void displayStack()
+void insertAtPos(int Pos, int Val)
 {
-    if(Top == -1)
+    Temp = (struct Node*)malloc(sizeof(struct Node));
+    Temp -> Data = Val;
+    n = Head;
+    int i;
+    for(i = 1 ; i < Pos - 1 ; i++)
     {
-        printf("\nStack is empty. No elements to display.\n");
+        n = n -> Next;
+    }
+    Temp -> Next = n -> Next;
+    n -> Next = Temp;
+    printf("%d has been inserted into the list.\n", Val);
+}
+
+void deleteByValue(int Val)
+{
+    Prev = NULL;
+    n = Head;
+    while(n != NULL && n -> Data != Val)
+    {
+        Prev = n;
+        n = n -> Next;
+    }
+    if(n == NULL)
+    {
+        printf("No such element not present in the list.\n");
         return ;
     }
-    printf("\nThe elements of the stack are : ");
-    for(int i = Top ; i >= 0 ; i--)
+    Prev -> Next = n -> Next;
+    printf("%d has been deleted from the list.\n", Val);
+    free(n);
+}
+
+void deleteByPos(int Pos)
+{
+    n = Head;
+    if(Pos == 1)
     {
-        printf("%d ", Stack[i]);
+        Head = n -> Next;
+        printf("Element at position %d has been deleted from the list.\n", Pos);
+        free(n);
+        return ;
     }
-    printf("\n");
+
+    int i;
+    for(i = 1 ; n != NULL && i < Pos - 1 ; i++)
+    {
+        n = n -> Next;
+    }
+
+    if(n == NULL || n -> Next == NULL)
+    {
+        printf("Position exceeds capacity of the linked list.\n");
+        return ;
+    }
+
+    struct Node *delPtr = n -> Next;
+    n -> Next = delPtr -> Next;
+    printf("Element at position %d has been deleted from the list.\n", Pos);
+    free(delPtr);
+}
+
+void findElement(int Val)
+{
+    n = Head;
+    while(n != NULL && n -> Data != Val)
+    {
+        n = n -> Next;
+    }
+    if(n == NULL)
+    {
+        printf("Element not found in the list.\n");
+        return ;
+    }
+    printf("Element is present in the list.\n");
+}
+
+void displayList()
+{
+  if(Head == NULL)
+  {
+    printf("\nList is empty. No elements to display.");
+    return ;
+  }
+
+  n = Head;
+  printf("\nThe elements of the list are : ");
+  while(n != NULL)
+  {
+    printf("%d ", n -> Data);
+    n = n -> Next;
+  }
+  printf("\n");
 }
 
 void Menu()
 {
     int Choice;
-    while(Choice != 5)
+    while(Choice != 8)
     {
-        printf("\nChoose any one of the following choices:-"
-               "\n1. Push data into the stack"
-               "\n2. Pop data from the stack"
-               "\n3. Peek into the stack"
-               "\n4. Display the elements of the stack"
-               "\n5. Exit"
+        printf("\nEnter Any One Of The Following Choices:-"
+               "\n1. Insert at the beginning"
+               "\n2. Insert at the end"
+               "\n3. Insert at a given position"
+               "\n4. Delete by value"
+               "\n5. Delete by position"
+               "\n6. Check if an element is present"
+               "\n7. Display the list"
+               "\n8. Exit"
                "\nYour choice is : ");
         scanf("%d", &Choice);
+        int Pos, Val;
         switch(Choice)
         {
-            case 1 : {
-                      int Data;
-                      printf("\nEnter the element to be pushed : ");
-                      scanf("%d", &Data);
-                      pushData(Data);
-                       break;
-                     }
-
-            case 2 : popData();
+            case 1 : printf("\nEnter value for insertion : ");
+                     scanf("%d", &Val);
+                     insertAtBeg(Val);
                       break;
 
-            case 3 : peek();
+            case 2 : printf("\nEnter value for insertion : ");
+                     scanf("%d", &Val);
+                     insertAtEnd(Val);
                       break;
 
-            case 4 : displayStack();
+            case 3 : printf("\nEnter value and position for insertion : ");
+                     scanf("%d %d", &Val, &Pos);
+                     insertAtPos(Pos, Val);
                       break;
 
-            case 5 : break;
+            case 4 : printf("\nEnter value for deletion : ");
+                     scanf("%d", &Val);
+                     deleteByValue(Val);
+                      break;
+
+            case 5 : printf("\nEnter position for deletion : ");
+                     scanf("%d", &Pos);
+                     deleteByPos(Pos);
+                      break;
+
+            case 6 : printf("\nEnter value for search operation : ");
+                     scanf("%d", &Val);
+                     findElement(Val);
+                      break;
+
+            case 7 : displayList();
+                      break;
+
+            case 8 : break;
 
             default : printf("\nInvalid choice.\n");
         }
@@ -93,6 +195,10 @@ void Menu()
 
 int main(void)
 {
+    int Num;
+    printf("\nEnter data to be inserted at head : ");
+    scanf("%d", &Num);
+    createList(Num);
     Menu();
     return 0;
 }

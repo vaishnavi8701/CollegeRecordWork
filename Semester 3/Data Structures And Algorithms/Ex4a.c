@@ -3,224 +3,253 @@
 
 struct Node
 {
-  int Data;
-  struct Node *Prev, *Next;
-}*Head, *Temp, *n;
+    int Data;
+    struct Node *Next;
+}*Prev, *Temp, *n;
+
+struct Node *Head = NULL;
 
 void createHead(int x)
 {
   Head = (struct Node*)malloc(sizeof(struct Node));
   Head -> Data = x;
-  Head -> Prev = Head -> Next = NULL;
+  Head -> Next = Head;
   printf("%d has been inserted as head node.\n", x);
 }
 
 void insertAtBeg(int x)
 {
-  Temp = (struct Node*)malloc(sizeof(struct Node));
-  Temp -> Data = x;
-  Temp -> Prev = NULL;
-  Temp -> Next = Head;
-  Head -> Prev = Temp;
-  Head = Temp;
-  printf("%d has been inserted into the list.\n", x);
-}
-
-void insertAtEnd(int x)
-{
-  Temp = (struct Node*)malloc(sizeof(struct Node));
-  Temp -> Data = x;
-  Temp -> Next = NULL;
-
-  n = Head;
-  while(n -> Next != NULL)
-  {
-    n = n -> Next;
-  }
-  n -> Next = Temp;
-  Temp -> Prev = n;
-  printf("%d has been inserted into the list.\n", x);
+    Temp = (struct Node*)malloc(sizeof(struct Node));
+    Temp -> Data = x;
+    n = Head;
+    while(n -> Next != Head)
+    {
+        n = n -> Next;
+    }
+    n -> Next = Temp;
+    Temp -> Next = Head;
+    Head = Temp;
+    printf("%d has been inserted into the list.\n", x);
 }
 
 void insertAtPos(int Pos, int x)
 {
-   Temp = (struct Node*)malloc(sizeof(struct Node));
-   Temp -> Data = x;
-   n = Head;
-   int i;
-   for(i = 1 ; i < Pos - 1 ; i++)
-   {
-     n = n -> Next;
-   }
+    if(Pos == 1)
+    {
+        insertAtBeg(x);
+        return ;
+    }
 
-   Temp -> Next = n -> Next;
-   n -> Next -> Prev = Temp;
-   n -> Next = Temp;
-   Temp -> Prev = n;
-   printf("%d has been inserted into the list.\n", x);
+    Temp = (struct Node*)malloc(sizeof(struct Node));
+    Temp -> Data = x;
+    n = Head;
+    int Count = 1;
+    do
+     {
+       Prev = n;
+       n = n -> Next;
+       Count++;
+     }while(n != Head && Count != Pos);
+
+    if(n == Head)
+    {
+        printf("\nInvalid position input.");
+        return ;
+    }
+
+    Prev -> Next = Temp;
+    Temp -> Next = n;
+    printf("%d has been inserted into the list.\n", x);
 }
 
-void findPos(int x)
+void insertAtEnd(int x)
 {
-  n = Head;
-  int Count = 1;
-
-  while(n != NULL && n -> Data != x)
-  {
-    n = n -> Next;
-    Count++;
-  }
-
-  if(n == NULL)
-  {
-    printf("Element not found.\n");
-  }
-  else
-  {
-    printf("Element present at position %d\n", Count);
-  }
+    Temp = (struct Node*)malloc(sizeof(struct Node));
+    Temp -> Data = x;
+    n = Head;
+    while(n -> Next != Head)
+    {
+        n = n -> Next;
+    }
+    n -> Next = Temp;
+    Temp -> Next = Head;
+    printf("%d has been inserted into the list.\n", x);
 }
 
-void delByVal(int x)
+void deleteByValue(int Val)
 {
-  n = Head;
-  if(Head != NULL && Head -> Data == x)
-  {
-    Head = n -> Next;
-    n -> Next -> Prev = NULL;
-    printf("%d has been deleted from the list.\n", x);
+    if(Head -> Data == Val && Head -> Next == Head)
+    {
+        free(Head);
+        return ;
+    }
+
+    n = Head;
+
+    if(Head -> Data == Val)
+    {
+        while(n -> Next != Head)
+        {
+            n = n -> Next;
+        }
+        n -> Next = Head -> Next;
+        free(Head);
+        Head = n -> Next;
+        printf("%d has been deleted from the list.\n", Val);
+        return ;
+    }
+
+    while(n -> Next != Head && n -> Next -> Data != Val)
+    {
+        n = n -> Next;
+    }
+
+    if(n -> Next -> Data == Val)
+    {
+        struct Node *Del = n -> Next;
+        n -> Next = Del -> Next;
+        printf("%d has been deleted from the list.\n", Val);
+        free(Del);
+    }
+    else
+    {
+        printf("Deletion not possible. Element does not exist in the list.\n");
+    }
+}
+
+void deleteByPos(int Pos)
+{
+    if(Head -> Next == Head)
+    {
+        free(Head);
+        return ;
+    }
+
+    n = Head;
+    struct Node *firstNode = Head;
+    if(Head != NULL && Pos == 1)
+    {
+        while(n -> Next != Head)
+        {
+            n = n -> Next;
+        }
+        n -> Next = firstNode -> Next;
+        Head = n -> Next;
+        free(firstNode);
+        printf("Element at position %d has been deleted from the list.\n", Pos);
+        return ;
+    }
+
+    int Count = 1;
+    do
+     {
+        Prev = n;
+        n = n -> Next;
+        Count++;
+     }while(n != Head && Count != Pos);
+
+    if(n == Head)
+    {
+        printf("Invalid position input.\n");
+        return ;
+    }
+    Prev -> Next = n -> Next;
+    printf("Element at position %d has been deleted from the list.\n", Pos);
     free(n);
-    return ;
-  }
-
-  while(n != NULL && n -> Data != x)
-  {
-    n = n -> Next;
-  }
-
-  if(n == NULL)
-  {
-    printf("Element not found.\n");
-    return ;
-  }
-
-  n -> Prev -> Next = n -> Next;
-  if(n -> Next != NULL)
-    n -> Next -> Prev = n -> Prev;
-  printf("%d has been deleted from the list.\n", x);
-  free(n);
 }
 
-void delByPos(int Pos)
+void findElement(int Num)
 {
-  n = Head;
-  if(Head != NULL && Pos == 1)
-  {
-    Head = n -> Next;
-    n -> Next -> Prev = NULL;
-    printf("Element has been deleted from position %d\n", Pos);
-    free(n);
-    return ;
-  }
-
-  int i;
-  for(i = 1 ; i < Pos ; i++)
-  {
-    n = n -> Next;
-  }
-
-  n -> Prev -> Next = n -> Next;
-  if(n -> Next != NULL)
-  {
-    n -> Next -> Prev = n -> Prev;
-  }
-  printf("Element has been deleted from position %d\n", Pos);
-  free(n);
+    n = Head;
+    do
+     {
+        if(n -> Data == Num)
+        {
+            printf("Element is present in the list.\n");
+            return ;
+        }
+        n = n -> Next;
+     }while(n != Head);
+    printf("Element is not present in the list.\n");
 }
 
 void displayList()
 {
-  if(Head == NULL)
-  {
-    printf("\nList is empty. No elements to display.");
-    return ;
-  }
-
   n = Head;
   printf("\nThe elements of the list are : ");
-  while(n != NULL)
-  {
-    printf("%d ", n -> Data);
+  do
+   {
+    printf("%d ",  n -> Data);
     n = n -> Next;
-  }
+   }while(n != Head);
   printf("\n");
 }
 
 void Menu()
 {
-  int Choice;
-  while(Choice != 8)
-  {
-    printf("\nEnter Any One Of The Following Choices:-"
-           "\n1. Insert At The Beginning"
-           "\n2. Insert At The End"
-           "\n3. Insert At The Given Position"
-           "\n4. Display Position Of A Specific Element"
-           "\n5. Delete By Value"
-           "\n6. Delete By Position"
-           "\n7. Display the list"
-           "\n8. Exit"
-           "\nYour Choice Is : ");
-    scanf("%d", &Choice);
-    int Pos, Val;
-    switch(Choice)
+    int Choice;
+    while(Choice != 8)
     {
-        case 1 : printf("\nEnter the value to be inserted : ");
-                 scanf("%d", &Val);
-                 insertAtBeg(Val);
-                  break;
+        printf("\nEnter Any One Of The Following Choices:-"
+               "\n1. Insert at the beginning"
+               "\n2. Insert at the end"
+               "\n3. Insert at a given position"
+               "\n4. Delete by value"
+               "\n5. Delete by position"
+               "\n6. Check if an element is present"
+               "\n7. Display the list"
+               "\n8. Exit"
+               "\nYour choice is : ");
+        scanf("%d", &Choice);
+        int Pos, Val;
+        switch(Choice)
+        {
+            case 1 : printf("\nEnter value for insertion : ");
+                     scanf("%d", &Val);
+                     insertAtBeg(Val);
+                      break;
 
-        case 2 : printf("\nEnter the value to be inserted : ");
-                 scanf("%d", &Val);
-                 insertAtEnd(Val);
-                  break;
+            case 2 : printf("\nEnter value for insertion : ");
+                     scanf("%d", &Val);
+                     insertAtEnd(Val);
+                      break;
 
-        case 3 : printf("\nEnter the value and position for insertion : ");
-                 scanf("%d %d", &Val, &Pos);
-                 insertAtPos(Pos, Val);
-                  break;
+            case 3 : printf("\nEnter value and position for insertion : ");
+                     scanf("%d %d", &Val, &Pos);
+                     insertAtPos(Pos, Val);
+                      break;
 
-        case 4 : printf("\nEnter the value for search : ");
-                 scanf("%d", &Val);
-                 findPos(Val);
-                  break;
+            case 4 : printf("\nEnter value for deletion : ");
+                     scanf("%d", &Val);
+                     deleteByValue(Val);
+                      break;
 
-        case 5 : printf("\nEnter the value for deletion : ");
-                 scanf("%d", &Val);
-                 delByVal(Val);
-                  break;
+            case 5 : printf("\nEnter position for deletion : ");
+                     scanf("%d", &Pos);
+                     deleteByPos(Pos);
+                      break;
 
-        case 6 : printf("\nEnter the position for deletion : ");
-                 scanf("%d", &Pos);
-                 delByPos(Pos);
-                  break;
+            case 6 : printf("\nEnter value for search operation : ");
+                     scanf("%d", &Val);
+                     findElement(Val);
+                      break;
 
-        case 7 : displayList();
-                  break;
+            case 7 : displayList();
+                      break;
 
-        case 8 : break;
+            case 8 : break;
 
-        default : printf("\nInvalid choice.\n");
+            default : printf("\nInvalid choice.\n");
+        }
     }
-  }
 }
 
 int main(void)
 {
-  int Num;
-  printf("\nEnter data for head node : ");
-  scanf("%d", &Num);
-  createHead(Num);
-  Menu();
-  return 0;
+    int Num;
+    printf("\nEnter data to be inserted at head : ");
+    scanf("%d", &Num);
+    createHead(Num);
+    Menu();
+    return 0;
 }
