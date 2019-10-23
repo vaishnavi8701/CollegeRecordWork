@@ -44,10 +44,15 @@ int main(void)
     }
   }
 
+  printf("\n");
   allSourceShortestPath(n, Graph, Dist);
-
+  printf("\t");
+  for(int i = 0 ; i < n ; i++)
+    printf("%d\t", i);
+  printf("\n");
   for(int i = 0; i < n; i++)
   {
+    printf("%d\t", i);
     for (int j = 0; j < n; j++)
     {
       if(Dist[i][j] == INF)
