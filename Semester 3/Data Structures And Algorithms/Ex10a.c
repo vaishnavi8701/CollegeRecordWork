@@ -3,22 +3,34 @@
 
 void singleSourceShortestPath(int n, int v, int Graph[][10], int Dist[])
 {
-  int i,u,count,w,flag[10],min;
-for(i=0;i<n;i++)
-flag[i]=0,Dist[i]=Graph[v][i];
-count=2;
-while(count<=n)
-{
-min=99;
-for(w=0;w<n;w++)
- if(Dist[w]<min && !flag[w])
-  min=Dist[w],u=w;
-flag[u]=1;
-count++;
-for(w=0;w<n;w++)
- if((Dist[u]+Graph[u][w]<Dist[w]) && !flag[w])
-  Dist[w]=Dist[u]+Graph[u][w];
-}
+    int u, Count, Flag[10], Min;
+    for(int i = 0 ; i < n ; i++)
+    {
+        Flag[i] = 0;
+        Dist[i] = Graph[v][i];
+    }
+  Count = 2;
+  while(Count <= n)
+  {
+    Min = 99;
+    for(int w = 0 ; w < n ; w++) 
+    {
+        if(Dist[w] < Min && !Flag[w])
+        {
+            Min = Dist[w];
+            u = w;
+        }
+    }
+    Flag[u] = 1;
+    Count++;
+    for(int w = 0 ; w < n ; w++)
+    {
+        if((Dist[u]+Graph[u][w]<Dist[w]) && !Flag[w])
+        {
+            Dist[w]=Dist[u]+Graph[u][w];
+        }
+    }
+  }
 }
 
 int main(void)
@@ -26,7 +38,7 @@ int main(void)
     int n;
     printf("\nEnter the number of nodes : ");
     scanf("%d", &n);
-    int Graph[n][n], Dist[n];
+    int Graph[10][10], Dist[10];
     printf("\nEnter the distance matrix : \n");
 
     for(int i = 0 ; i < n ; i++)
