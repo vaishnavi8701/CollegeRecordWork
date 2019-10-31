@@ -1,5 +1,5 @@
 <?php
-        if(isset($_POST['num']))
+        if(isset($_POST['req']))
 	{
                 $n = $_POST['num'];
                 $temp = $n;
