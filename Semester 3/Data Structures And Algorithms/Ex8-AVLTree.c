@@ -1,7 +1,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-typedef struct Node
+typedef struct harish
 {
   int Data;
   struct Node *Left, *Right;
