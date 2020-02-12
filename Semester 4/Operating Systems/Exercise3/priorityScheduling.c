@@ -2,13 +2,14 @@
 
 int main()
 {
-  int burstTime[20], Process[20], waitingTime[20], turnaroundTime[20], Priority[20];
-  int i, j, Limit, Sum = 0, Pos, Temp;
-  float averageWaitTime, averageTurnaroundTime;
+  int n;
   printf("Enter Total Number of Processes : ");
-  scanf("%d", &Limit);
-  printf("\nEnter Burst Time and Priority For %d Processes\n", Limit);
-  for (i = 0; i < Limit; i++)
+  scanf("%d", &n);
+  int burstTime[n], Process[n], waitingTime[n], turnaroundTime[n], Priority[n];
+  int i, j, Sum = 0, Pos, Temp;
+  float averageWaitTime, averageTurnaroundTime;
+  printf("\nEnter Burst Time and Priority For %d Processes\n", n);
+  for (i = 0; i < n; i++)
   {
     printf("\nP[%d]\n", i + 1);
     printf("Process Burst Time : ");
@@ -17,10 +18,10 @@ int main()
     scanf("%d", &Priority[i]);
     Process[i] = i + 1;
   }
-  for (i = 0; i < Limit; i++)
+  for (i = 0; i < n; i++)
   {
     Pos = i;
-    for (j = i + 1; j < Limit; j++)
+    for (j = i + 1; j < n; j++)
     {
       if (Priority[j] < Priority[Pos])
       {
@@ -38,7 +39,7 @@ int main()
     Process[Pos] = Temp;
   }
   waitingTime[0] = 0;
-  for (i = 1; i < Limit; i++)
+  for (i = 1; i < n; i++)
   {
     waitingTime[i] = 0;
     for (j = 0; j < i; j++)
@@ -47,16 +48,16 @@ int main()
     }
     Sum = Sum + waitingTime[i];
   }
-  averageWaitTime = Sum / Limit;
+  averageWaitTime = Sum / n;
   Sum = 0;
   printf("\nProcess ID\t\tBurst Time\t Waiting Time\t Turnaround Time");
-  for (i = 0; i < Limit; i++)
+  for (i = 0; i < n; i++)
   {
     turnaroundTime[i] = burstTime[i] + waitingTime[i];
     Sum = Sum + turnaroundTime[i];
     printf("\nP[%d]\t\t\t%d\t\t %d\t\t %d", Process[i], burstTime[i], waitingTime[i], turnaroundTime[i]);
   }
-  averageTurnaroundTime = Sum / Limit;
+  averageTurnaroundTime = Sum / n;
   printf("\n\nAverage Waiting Time : %.2f", averageWaitTime);
   printf("\nAverage Turnaround Time : %.2f\n", averageTurnaroundTime);
   return 0;
