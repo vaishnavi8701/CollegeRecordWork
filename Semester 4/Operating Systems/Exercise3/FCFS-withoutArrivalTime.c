@@ -4,12 +4,12 @@ int main()
 {
   // Read Number Of Processes
   int n;
-  printf("Enter the total number of processes : ");
+  printf("Enter the Total Number of Processes : ");
   scanf("%d", &n);
 
   // Create arrays of size n for waiting time, burst time and turn around time
   int burstTime[n], waitingTime[n], turnAroundTime[n], i, j;
-  float averageWaitingTime = 0, averageTurnAroundTime = 0;
+  float totalWaitingTime = 0, totalTurnaroundTime = 0;
 
   // Accept burst time for each process
   printf("\nEnter Burst Time for each process:-\n");
@@ -35,15 +35,15 @@ int main()
   for (i = 0; i < n; i++)
   {
     turnAroundTime[i] = burstTime[i] + waitingTime[i];
-    averageWaitingTime += waitingTime[i];
-    averageTurnAroundTime += turnAroundTime[i];
+    totalWaitingTime += waitingTime[i];
+    totalTurnaroundTime += turnAroundTime[i];
     printf("\nP[%d]\t\t%d\t\t%d\t\t%d", i + 1, burstTime[i], waitingTime[i], turnAroundTime[i]);
   }
 
-  averageWaitingTime /= n;
-  averageTurnAroundTime /= n;
+  float averageWaitingTime = totalWaitingTime / n;
+  float avergaeTurnAroundTime = totalTurnaroundTime / n;
   printf("\n\nAverage Waiting Time : %.2f", averageWaitingTime);
-  printf("\nAverage Turnaround Time : %.2f", averageTurnAroundTime);
+  printf("\nAverage Turnaround Time : %.2f\n", avergaeTurnAroundTime);
 
   return 0;
 }
